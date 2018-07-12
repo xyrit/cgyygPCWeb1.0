@@ -1,0 +1,182 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+  background-image:url(../images/login-bg.jpg);
+  background-size: 100%;
+  background-color: #000;
+  font-family:"微软雅黑";
+  
+}
+*{ margin:0; padding:0}
+.margin-l-r-10{ margin:0 10px;}
+.margin-t-40{ margin-top:40px;}
+.margin-b-20{ margin-bottom:20px;}
+.container-box{
+  max-width: 420px;
+  height:500px;
+  padding: 15px 40px;
+  margin: 60px auto;
+  background-color:#fff;
+  border-top:#ff4800 2px solid;
+  border-radius:0;
+  position:relative;
+  z-index: 99;
+}
+.login-box {
+  max-width: 420px;
+  /*height:500px;*/
+  padding: 15px 40px;
+  position: absolute;
+  left:0;
+  right:0;
+  top:0;
+  background-color:#fff;
+}
+.login-box .form-signin-heading,
+.login-box .checkbox {
+  margin-bottom: 20px;
+}
+.login-box .checkbox {
+  font-weight: normal;
+}
+.login-box .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.login-box .form-control:focus {
+  z-index: 2;
+}
+.login-box input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.login-box input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+/**************/
+.errTipIcon{ font-size:16px; margin-right:5px;margin-top: 1px;}
+.cg-hide{ display:none}
+.show{ display:block}
+.btn-orange{ background-color:#ff6d33;border:0;}
+.btn-orange:hover{background-color: #ff8453;}
+.btn.active, .btn:active, .btn:focus{background-color: #FD6022;}
+.logo{ text-align:center; padding:25px 0;}
+.logo img{ height:50px;}
+.login-input .tip .well{ border:1px solid #ff8453; box-shadow:none; height:22px; line-height:22px; padding:0 5px; font-size:12px; border-radius:0;color:#ff8453; background-color:#ffded1}
+.input-item{ margin-bottom:0px; overflow:hidden;}
+.input-item .input-group{ margin-bottom:20px; width:340px;}
+
+.input-item span.input-group-addon{ background-color:#ccc; border:0; border-radius:0;top:0;font-size: 18px; width:40px; height:44px; float: left;line-height: 30px;}
+.input-item input{ border-color:#ccc; border-radius:0;}
+.login-input .input-group .form-control{ z-index:0; width:300px;color: #696969;height: 44px;}
+
+.checkbox{ color:#909090;font-size:12px}
+a.forget{ color:#909090;font-size:12px; line-height:22px;padding-top: 3px;float: right;}
+a.forget:hover{ text-decoration:underline}
+.tip-2{ font-size:12px; color:#909090; padding-top:10px;}
+.tip-2 a.reg{color:#ff4800;}
+.tip-2 a.reg:hover{ text-decoration:underline}
+
+.tip-3 .tip-3-title{ position:relative; height:20px; margin-top:20px;}
+.tip-3 .tip-3-title .border{ border-bottom:1px solid #ccc; position:absolute; left:0; top:9px; width:100%; height:2px;}
+.tip-3 .tip-3-title>span{ position:absolute; width:90px; background:#fff; left:50%; top:0;color:#909090;text-align: center;margin-left: -45px; font-family:"微软雅黑"; font-size:14px;}
+.tip-3 .web-login{ width:220px; height:30px; margin:15px auto;}
+.tip-3 .web-login .web-login-btn{ height:30px; width:30px; background-position:center center; background-repeat:no-repeat; display:inline-block}
+.tip-3 .web-login .qq{ background-image:url(../images/login/qq.png);}
+.tip-3 .web-login .weixin{ background-image:url(../images/login/weixin.png); margin:0 60px;}
+.tip-3 .web-login .sina{ background-image:url(../images/login/sina.png);}
+.sao-btn{ width:80px; height:80px; background:url(../images/login/weixin-btn.png) center center no-repeat; cursor:pointer; position:absolute; right:0; bottom:0; border:0}
+.sao-btn2{background:url(../images/login/weixin-btn2.png) center center no-repeat; display:block; cursor:pointer;position: absolute;
+bottom: -72px;}
+/*注册*/
+.form-signin-2{ background-color:#fff;}
+.tip-2-2{ font-size:14px}
+/*扫码*/
+.sao-title{ height:40px; background-color:#ff4800; margin:-15px -40px 20px -40px; position:relative; font-size:18px; color:#fff; line-height:35px;}
+.sao-title .cg-close{position: absolute; right: 10px; cursor:pointer}
+.sao-body{ width:225px; height:250px; text-align:center; margin:60px auto;}
+a.fresh-btn{ font-size:18px; color:#ff4800;}
+a.fresh-btn:hover{ color:#FD6022}
+/*倒三角*/
+/*.triangle_down{
+    width:0;
+    height:0;
+    border-width:0px 10px 10px;
+    border-style:solid;
+    border-color: transparent transparent #ccc;
+	position:absolute;
+	bottom:-20px;
+	left:50%;/
+    margin-left:-10px;
+	display:none
+}
+.nav-tabs-diy1>li.active .triangle_down{display:block}*/
+
+.sao-title:before{
+	display:inline-block;
+	width:0;
+	height:0;
+	overflow:hidden;
+	line-height:0;
+	font-size:0;
+	vertical-align:middle;
+	border-top:7px solid #ff4800;
+	border-bottom:0 none;
+	border-left:7px dashed transparent;
+	border-right:7px dashed transparent;
+	_color:#ccc;
+	_filter:chroma(color=#ccc);
+	content:"";
+	position:absolute;
+	bottom:-7px;
+	left:50%; /*三角形居中显示 */
+    margin-left:-7px;/* 三角形居中显示 */
+}
+/*.sao-title:after{
+	display:inline-block;
+	width:0;
+	height:0;
+	overflow:hidden;
+	line-height:0;
+	font-size:0;
+	vertical-align:middle;
+	border-bottom:6px solid #ffffff;
+	border-top:0 none;
+	border-left:6px dashed transparent;
+	border-right:6px dashed transparent;
+	_color:#ccc;
+	_filter:chroma(color=#ccc);
+	content:"";
+	position:absolute;
+	bottom:-21px;
+	left:50%; 三角形居中显示 
+    margin-left:-10px; 三角形居中显示 
+}*/
+
+/*********版权************友情链接*******/
+.cg-footer{ border-top: solid 1px #3E3E3E; margin-top:20px; background-color:rgba(0,0,0,0.4); position:fixed;right:0; left:0; bottom:0;box-shadow: 1px 1px 5px #ececec;}
+@media screen and (max-height: 700px) {
+	.cg-footer{ position:relative;}
+	
+}
+.cg-footer-nav{ padding:20px 0 10px 0}
+.cg-footer-nav .footer-menu{ margin:0}
+.cg-footer-nav .footer-menu>a{color:#fff; padding:10px 5px; display:inline-block}
+.cg-footer-nav .footer-menu>a:hover{ text-decoration:underline}
+/**绑定手机***/
+.bind_pic{ width: 70px;height: 70px;border: 1px solid #e4e4e4; border-radius: 50%;}
+.bind_nickname{color:#ff4800;font-size: 14px;margin-bottom: 5px}
+.bind_tipContent{font-size: 12px;}
+/*正在加载中*/
+.loading{ margin:0 auto; text-align:center; padding:10px 0;}
+.per_time_tab-content{ margin:10px 10px;}
+.article-text{ font-family:"宋体" !important; line-height:25px;text-indent:2em;}
+.article-text h1{ font-size:18px;}

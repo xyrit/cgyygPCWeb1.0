@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+.per-head{ background-image:url(../../images/per-head.jpg); background-size:cover; height:127px; width:100%; background-position:center center; background-repeat:repeat-x;color:#fff; margin-bottom:20px;}
+.per-head .per-head-p{ margin-top:30px;}
+.per-head .per-headBasic .list-group>li{ float:left; margin-right:5px;}
+.per-head .per-headBasic .list-group>li a{ color:#00c69e}
+.per-head .per-headBasic .list-group>li a:hover{color: #48cfad;}
+.per-head .per-dot{ margin-left:20px; display:block;float:left;}
+.per-head .per-dot>a{ background-position:center center; background-repeat:no-repeat; height:50px; display:block; width:60px; text-align:center;color:#fff}
+.per-head .per-dot>a>span{ display:block; width:60px; height:50px; line-height:50px;color:#fff}
+.per-head .per-dot .dot-a1{ background-image:url(../../images/dot1.png)}
+.per-head .per-dot .dot-a2{ background-image:url(../../images/dot2.png)}
+.per-head .per-dot .dot-a3{ background-image:url(../../images/dot3.png)}
+.per-head .per-dot .dot-a1:hover{color:#ff3c00}
+.per-head .per-dot .dot-a2:hover{color:#0090cc}
+.per-head .per-dot .dot-a3:hover{color:#2eb000}
+/*左侧菜单*/
+.per-list-group .list-group-item{ border:solid 1px #ccc; border-radius:0; padding:0; text-align:center}
+.per-list-group .list-group-item>a{ color:#333; display:block;padding: 10px 15px;}
+.per-list-group .list-group-item>a:hover{background-color:#ff4800;color:#fff}
+.per-list-group .list-group-item.active{ background-color:#ff4800;}
+.per-list-group .list-group-item.active a{color:#fff}
+.per-list-group .list-group-item.active:hover{border-color:#ff4800}
+/*右侧内容*********我的账户****/
+.per-money{ padding:15px 0; border:1px solid #ccc; height:130px;}
+.per-money-con{ border-right:1px solid #ccc; height:95px; text-align:center;}
+.per-money-con .num{ color:#ff2400; font-size:24px; font-weight:bold}
+/*tab 切换 商品列表*/
+.per-goods-box{ border:1px solid #ccc;margin-top:15px;}
+.per-goods-box .nav-tabs{border:1px solid #ccc;margin:-1px -1px 0 -1px}
+.per-goods-box .nav-tabs li{ border:1px solid #ccc;border-left:0; border-bottom:0;border-top:0}
+.per-goods-box .nav-tabs .active{ border-top:2px solid #ff4800;border-left:0; border-bottom:0;margin-bottom: -1px;}

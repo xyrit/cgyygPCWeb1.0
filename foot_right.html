@@ -1,0 +1,147 @@
+<div class="cg-right">
+    <div class="cg-right-content">
+        <div class="cg-right-top"><img src="images/right/right-text.png"></div>
+        <div class="cg-right-car text-center" id="shopCart">
+            <a href="payfor1.html">
+                <span class="badge cg-badge goods_num cart_num"></span>
+                <!--<span class="badge cg-badge cart_num"></span>-->
+                <img src="images/right/right-car.png">
+                <span class="cg-right-carText">购物车</span>
+            </a>
+        </div>
+        <!--<div class="cg-right-item star">
+           <div class="layer-1">
+              <a href="#"></a>
+           </div>
+           <div class="layer-2">
+              <a href="#">收藏</a>
+           </div>
+        </div>-->
+        <div class="cg-right-item service">
+            <div class="layer-1">
+                <a href="avascript:;"></a>
+            </div>
+            <div class="layer-2">
+                <a href="tencent://Message/?Uin=3048007917&websiteName=www.cgyyg.com=&Menu=yes">客服</a>
+            </div>
+        </div>
+        <!--<div class="cg-right-item APP">
+           <div class="layer-1">
+              <a href="#"></a>
+           </div>
+           <div class="layer-2">
+              <a href="#">APP</a>
+           </div>
+        </div>-->
+        <div class="cg-right-item weixin">
+            <div class="layer-1">
+                <a href="javascript:;"></a>
+            </div>
+            <div class="layer-2">
+                <a href="javascript:;">微信</a>
+            </div>
+            <div class="layer-box">
+                <img src="images/code-cg.jpg" class="code-img"/>
+            </div>
+        </div>
+        <!--<div class="cg-right-item feedback">
+           <div class="layer-1">
+              <a href="#"></a>
+           </div>
+           <div class="layer-2">
+              <a href="#">意见<br>反馈</a>
+           </div>
+        </div>-->
+        <!--<div class="cg-right-item record">
+           <div class="layer-1">
+              <a href="#"></a>
+           </div>
+           <div class="layer-2">
+              <a href="#">浏览<br>记录</a>
+           </div>
+        </div>-->
+        <div class="cg-right-item pay">
+            <div class="layer-1">
+                <a href="#"></a>
+            </div>
+            <div class="layer-2">
+                <a href="recharge.html">充值</a>
+            </div>
+        </div>
+        <div class="cg-right-bottom return-top">
+            <div class="layer-1">
+                <a href="#" class="return-top-a">
+                    <!--<span class="up">^</span>-->
+                    <span class="icon-angle-up" style="font-size: 28px;"></span>
+                    <!--<span>top</span>-->
+                </a>
+            </div>
+            <div class="layer-2">
+                <a href="javascript:;" class="cg-return-top">返回<br>顶部</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    /*右边*浮动版*/
+    $(".cg-right .cg-right-item").hover(function(){
+        $(this).addClass("cg-right-item-hover");
+    },function(){
+        $(this).removeClass("cg-right-item-hover");
+    });
+    $(".cg-right .cg-right-bottom").hover(function(){
+        $(this).addClass("cg-right-item-hover");
+
+    },function(){
+        $(this).removeClass("cg-right-item-hover");
+    });
+    /*出现浮动面板*/
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 500) {
+            $(".cg-right").stop().show().animate({ bottom: '0px' }, 300);
+            $(".cg-right").css({ position: "fixed"});
+
+            var height = $(window).height();//浏览器高度
+            var contentheight= $(".cg-right-content").height();//返回顶部内容高度
+            //浏览器的高度与内容高度差的一半
+            var p = (height-contentheight)/2;
+            $(".cg-right-content").css("padding",""+p+"px 0px");
+            if($(window).height()<660){
+                $(".cg-right-top").hide();
+            }else{
+                $(".cg-right-top").show();
+            }
+            //浏览器窗口改变时 重新计算高度
+            $(window).resize(function () {
+                var height = $(window).height();
+                var contentheight= $(".cg-right-content").height();
+                var p = (height-contentheight)/2;
+                $(".cg-right-content").css("padding",""+p+"px 0px");
+
+                if($(window).height()<660){
+                    $(".cg-right-top").hide();
+                }else{
+                    $(".cg-right-top").show();
+                }
+            });
+
+        }
+        else {
+
+            $(".cg-right").stop().animate({ bottom: '-860px'}, 300);
+            $(".cg-right").css({ position: "fixed"});
+        }
+        if($(window).height()<660){
+            $(".cg-right-top").hide();
+        }else{
+            $(".cg-right-top").show();
+        }
+
+    });//返回顶部
+    $('.cg-right .cg-return-top').click(function () {
+        $('body,html').animate({ scrollTop: 0 }, 500);
+        $(".cg-right").animate({ bottom: '-380px', opacity: '0' }, 500);
+        return false;
+    });
+</script>

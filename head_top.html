@@ -1,0 +1,82 @@
+<!--顶部小菜单-->
+<div class="navbar-wrapper">
+
+          <div class="container">
+              <div class="row">
+                  <!--<div class="navbar-header col-lg-2 col-md-2 col-xs-2" style="margin-left: -15px;">
+                      <span class="welcome">欢迎来到橙果云购</span>
+                      <img src="images/phone_icon.png" class="margin-b-5"/><span class="welcome padding-l-5">400-006-7060</span>
+                  </div>-->
+                  <div class="navbar-header col-lg-5 col-md-5 col-xs-5" style="margin-left: -15px;">
+                      <!--<img src="images/qq_icon.png" class="margin-b-5"/><span class="welcome padding-l-5">橙果交流群：483956744</span>-->
+                      <ul class="welcome">
+                          <li class="display-ib margin-r-15"><span class="welcome">欢迎来到橙果云购！</span></li>
+                          <li id="loginBox" class="display-ib"><a href="login.html">请登录</a></li>
+                          <li class="display-ib" style="font-size: 12px;padding: 0px 5px;color: #cecece">|</li>
+                          <li id="regBox" class="display-ib"><a href="login.html?regist=1">注册</a></li>
+                      </ul>
+                  </div>
+                <div id="navbar" class="navbar-collapse cg-coll nav-top col-lg-9 col-md-9 col-xs-9" style="margin-right: -30px;margin-top: 7px;">
+                  <ul class="nav navbar-nav">
+                     <!-- <li id="loginBox"><a href="login.html">请登录</a></li>
+                      <li id="regBox"><a href="login.html">注册</a></li>-->
+                    
+                    <li class="dropdown">
+                      <a href="personal-index.html" class="dropdown-toggle dropdown-toggle-top margin-b-5" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"  style="border-left: none">我的橙果 <span class="caret" id="caret-down"></span><span class="caret-up display-none" id="caret-up"></span></a>
+                      <ul class="dropdown-menu dropdown-menu-top">
+                        <li><a href="personal-index.html?per_market=1">云购记录</a></li>
+                        <li><a href="personal-index.html?per_market=2">中奖记录</a></li>
+                        <li><a href="personal-index.html?per_market=3">个人设置</a></li>
+                        
+                      </ul>
+                    </li>
+                    <li><a href="recharge.html" target="_blank">充值</a></li>
+                    <li><a href="help-article.html?pid=437">帮助</a></li>
+                      <li>
+                          <a href="#" class="phoneapp" style=""><img src="images/weixin_icon.png" style="margin-right: 3px;height: 15px;" class="pull-left">关注橙果</a>
+                          <div class="appbox" style="margin-left: 8px;"><img src="images/code-cg.jpg" class="code-img"></div>
+
+                      </li>
+                      <li>
+                          <a href="http://weibo.com/p/1006065742783615/home?from=page_100606&mod=TAB&is_hot=1#place" class="phoneapp" style="" target="_blank"><img src="images/sina_icon.png" style="margin-right: 3px;height: 15px;" class="pull-left">新浪微博</a>
+                          <div class="appbox" style="margin-left: 8px;"><img src="images/sina.jpg" class="code-img"></div>
+
+                      </li>
+              
+                  </ul>
+                </div>
+                
+              </div>
+          </div>
+
+    </div>
+<script src="js/loadTop.js"></script><!--加载头部-->
+<script>
+
+    /*显示微信图*/
+    $(".phoneapp").hover(function(){
+        $(this).parent().find(".appbox").stop().slideDown(200);
+    }, function(){
+        $(this).parent().find(".appbox").stop().slideUp(200);
+    });
+    //构造鼠标经过显示子菜单，关闭bootstrap自带点击事件
+    $(document).off('click.bs.dropdown.data-api');
+    dropdownOpen();//调用
+
+    /**
+     * 鼠标划过就展开子菜单，免得需要点击才能展开，构造鼠标经过显示子菜单
+     */
+    function dropdownOpen() {
+        var $dropdownLi = $('li.dropdown');
+        $dropdownLi.mouseover(function() {
+            $(this).addClass('open');
+            $(this).find("#caret-down").stop(false,true).hide();
+            $(this).find("#caret-up").stop(false,true).fadeIn(300).css("display","inline-block");
+        }).mouseout(function() {
+            $(this).removeClass('open');
+            $(this).find("#caret-up").stop(false,true).hide();
+            $(this).find("#caret-down").stop(false,true).fadeIn(300).css("display","inline-block");
+
+        });
+    }
+</script>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>登录注册</title>
+</head>
+<body>
+
+    <div style="width:300px;text-align: center;margin: 0 auto;margin-top: 50px">
+        <img src="images/loding.gif"/><br/>
+        正在加载中...
+    </div>
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/data/common.js"></script>
+<script src="js/data/connect_url.js"></script>
+<script type="text/javascript">
+  $(function(){
+      //获取地址栏传过来参数
+      function GetQueryString(data)
+      {
+          var reg = new RegExp("(^|&)"+ data +"=([^&]*)(&|$)");
+          var r = window.location.search.substr(1).match(reg);
+          if(r!=null)return  unescape(r[2]); return null;
+      }
+      var token = GetQueryString('token');
+      //var ajaxUrl= 'http://test.cgyyg.com/cgyyg1.0/index.php';
+      var load = $.cookie('load');
+
+      if(token){
+          $.ajax({
+              type:'post',
+              url:''+ajaxUrl+'/Home/User/getInfo',
+
+              data:{
+                  token:token
+              },
+              cache:false,
+              dataType:'json',
+              timeout:60000,
+              beforeSend: function(){
+                  // $(".loading").html("<img src='images/loding.gif'/><br>正在加载中...");
+              },
+              success:function(data){
+                  var code=data['code'];
+                  var info=data['info'];
+                  if(code!=200){
+
+                      return;
+                  }
+                  var uid=data['user']['uid'];
+                  var nickname=data['user']['nickname'];
+                  var pic_host=data['pic_host'];
+                  var path=data['user']['path'];
+                  var mobile=data['user']['mobile'];
+                  var user_token=data['user']['user_token'];
+                  var picReg=/^http[\s\S]*$/;
+                  var ucenter_url=data['user']['ucenter_url'];
+
+                  $.cookie('ucenter_url', ucenter_url, { expires:1, path: '/' });
+                  if(!(picReg.test(path))){
+
+                      path=pic_host+path;
+
+                      $.cookie('path', path, { expires:1, path: '/' });
+                  }else{
+
+                      $.cookie('path', path, { expires:1, path: '/' });
+                  }
+
+                  $.cookie('userMobile', mobile, { expires:1, path: '/' });
+                  $.cookie('userId', uid, { expires:1, path: '/' });
+                  $.cookie('nickname', nickname, { expires:1, path: '/' });
+                  $.cookie('user_token', user_token, { expires:1, path: '/' });
+
+                  if(load==1){
+                      location.href = ""+ucenter_url+"";
+                  }
+                  else{
+                      window.location.href="index.html";
+                  }
+
+              }
+          });
+      }
+  })
+</script>
+</body>
+</html>

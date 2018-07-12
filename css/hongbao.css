@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* 红包活动专题 */
+.content_body{ background-image:url(../images/hongbao_bg.jpg); background-repeat:no-repeat; background-size:100%; min-height:1300px; width:100%; background-color:#e72e2e;height:1300px}
+/*.hong_content{ top:540px;}*/
+.rule_box{ color:#f2e2b4}
+.rule_box .rule_title{ font-size:24px; margin-bottom:10px;}
+.rule_box .rule_list{font-size:16px; margin-bottom:5px; text-indent:2em}
+
+.already_chong{}
+.already_chong .already_num{ background-color:#ffe400; padding:0 5px; font-size:45px;color:#e62828}
+.already_chong .already_zi{ background-color:#8d0135; padding:5px;color:#ffe400; font-size:16px; text-align:center;letter-spacing:8px; border-bottom: double 1px #212222;position: relative}
+.already_chong .already_zi .border-bg{ display: block; width: 100%;height: 10px; background-image: url("../images/hong_border.png"); background-repeat: repeat-x; position: absolute;bottom:-10px;left: 0;right: 0}
+.chong_btn{ border:2px solid #fff;background-color:#ffe400;color:#e62828;font-size:16px; padding-left:25px; padding-right:25px;}
+.chong_btn:hover{background-color:#fbea60;color:#e62828; border-color:#fff;}
+
+.data_list{ background-color:#fff; margin-top:20px}
+.hong_btn2{ border-color:#E0460A;border-radius: 4px;}
+.data_list .table>thead>tr>td,.data_list .table>thead>tr>th{ width:33.3%}
+/*@media (max-width:1920px){
+.content_body{min-height:1500px;height:1500px}
+.hong_content{ top:735px;}
+}
+*/
+/*零元创业*/

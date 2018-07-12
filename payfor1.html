@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico">
+    <title>购物车-橙果云购</title>
+    <meta name="keywords" content="1元，一元，一元云购，一元夺宝，1元云购，1元夺宝，一元购，1元购，橙果云购，橙果一元购，橙果1元购"/>
+    <meta name="description" content="橙果云购是一个新型的、专业的众筹式购物商城。只需1元，您就有机会获得一件商品。橙果云购将倾力打造一个公正公平公开的环境，让您的生活充满惊喜！"/>
+    <!-- Bootstrap core CSS -->
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <link href="css/site.min.css" rel="stylesheet">
+    <link href="css/bootflat.min.css" rel="stylesheet">
+    <link href="css/yiyuan.css" rel="stylesheet">
+    <link href="css/goodscar/goodscar.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/alert/sweetalert.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <style>
+      .all-sort-list{width:200px; display:none}
+      .item-list .cat-right { position: absolute; right: 0;}
+      .all-sort-list .item.bo{width:200px;}
+      .menu .all-sort{top:0}
+      .all-sort-list .item-list{left:200px;}
+
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+    <div id="head_top"></div>
+    <!--logo,搜索-->
+    <div class="container logo-search">
+       <div class="row">
+          <div class="col-lg-2 col-md-3 col-xs-4">
+             <a href="index.html"><img src="images/logo.png"></a>
+          </div>
+          <div class="col-lg-8 col-md-7 col-xs-8 col-md-offset-2">
+             <div class="sui-steps steps-auto">
+                <div class="wrap">
+                    <div class="current">
+                      <label><span class="round">1</span><span>提交订单</span></label><i class="triangle-right-bg"></i><i class="triangle-right"></i>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="todo">
+                      <label><span class="round">2</span><span>支付订单</span></label>
+                      <i class="triangle-right-bg"></i><i class="triangle-right"></i>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="todo">
+                      <label><span class="round">3</span><span>获得幸运码，等待揭晓</span></label>
+                      <i class="triangle-right-bg"></i><i class="triangle-right"></i>
+                    </div>
+                </div>
+                <div class="wrap">
+                    <div class="todo">
+                      <label><span class="round">4</span><span>揭晓获奖幸运码</span></label>
+                    </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    
+    </div>
+    <!--logo,搜索-->
+
+    <!--中间内容****-->
+    <div class="container">
+             <!--购物车-->
+             <div class="row">
+                <div class="col-md-12">
+                    <div class="loading"></div>
+                    <table id="cartTable" class="table table-bordered table-condensed">
+                      <thead>
+                          <tr class="gray-bg">
+                              <th class="text-center"><!--<label><input class="check-all check" type="checkbox"/>&nbsp;全选</label>-->选择</th>
+                              <th class="text-center">商品</th>
+                              <th class="text-center">剩余人次</th>
+                              
+                              <th class="text-center">参与人次</th>
+                              <th class="text-center">小计</th>
+                              <th class="text-center">操作</th>
+                          </tr>
+                      </thead>
+                      <tbody id="goodsList">
+
+                      </tbody>
+                  </table>
+                  <div class="foot" id="foot">
+                      <label class="pull-left select-all" id="checkAllbox"><input type="checkbox" class="check-all check" checked/>&nbsp;全选</label>
+                      <a class="pull-left delete" id="deleteAll" href="javascript:;">删除</a>
+                      <a href="javascript:;" class="pull-right closing" id="closing">结 算</a>
+                      <div class="pull-right total">合计：￥<span id="priceTotal">0.00</span></div>
+                      <div class="pull-right selected" id="selected">已选商品<span id="selectedTotal">0</span>件</div>
+                  </div>
+
+                </div>
+             </div>
+             <hr>
+             <!--商品列表-->
+             <div class="row margin-b-20">
+                 <div class="col-md-12">
+                    <div class="box-hd">
+                      <h2 class="title">人气推荐</h2>
+                    </div>
+                 </div>
+                 <div id="hotList">
+                      <div class="loading"></div>
+                 </div>
+             </div>
+             <!--商品结束-->
+       <!--帮助信息-->
+      
+
+    </div>
+    <!--版权*****友情链接-->
+    <div id="footer_content"></div>
+    <!--版权*****友情链接-->
+    <!--中间内容*************-->
+    <!--右边，右边栏，返回顶部-->
+    <div id="foot_right"></div>
+    <!--右边，右边栏，返回顶部-->
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.json.min.js"></script>
+    <script src="js/data/connect_url.js"></script>
+    <script src="js/data/common.js"></script>
+    <script>
+        // 加载头部--------------公共头部
+        $("#head_top").load('head_top.html');
+        //加载底部
+        $("#footer_content").load('footer_copyright.html');
+        $("#foot_right").load('foot_right.html');
+
+    </script>
+    <script src="js/alert/sweetalert.min.js"></script><!--弹出框-->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/data/goodsCarList.js"></script>
+    <script src="js/data/addToCar.js"></script><!--添加商品进购物车-->
+    <script src="js/addToCarBtn.js"></script><!--点击加入购物车弹出+1-->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+      <script>
+          //头部的购物车数量----调用购物车数量接口
+          var user_token = $.cookie('user_token');
+          getCartNum();
+          function getCartNum(){
+              $.ajax({
+                  type:'post',
+                  url:''+ajaxUrl+'/Home/Shopcart/listNum',
+                  data:{
+                      user_token:user_token,
+                      pageSize:10,
+                      pageIndex:0,
+                      //state:0, //资金明细类型 0消费记录,1充值记录
+                      soso:0
+                  },
+                  cache:false,
+                  dataType:'json',
+                  beforeSend:function(){
+
+                  },
+                  success:function(data){
+                      if(data['code']==200){
+                          var goods_num=data['total'];
+                          $(".goods_num").html(goods_num);
+
+
+                      }else if(data['code']==517){
+                          //517为‘请登录后’再操作，防止出现此类问题，出现登录按钮
+                          $("#loginBox").html('<a href="login.html">请登录<a>');
+                          $("#regBox a").html("注册").attr({id:"reg_a",href:"login.html?regist=1"});
+                          $(".goods_num").html('0');
+                      }
+
+                      else{
+                          $(".goods_num").html('0');
+                      }
+                  }
+              });
+          }
+      </script>
+  </body>
+</html>
+

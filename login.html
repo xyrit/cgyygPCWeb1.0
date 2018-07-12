@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>登录/注册 - 橙果云购</title>
+<meta name="keywords" content="登录橙果云购，注册橙果云购，橙果云购，橙果云购会员注册"/>
+<meta name="description" content="橙果云购是一个新型的、专业的众筹式购物商城。只需1元，您就有机会获得一件商品。橙果云购将倾力打造一个公正公平公开的环境，让您的生活充满惊喜！"/>
+<!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+<link href="css/site.min.css" rel="stylesheet">
+<link href="css/bootflat.min.css" rel="stylesheet">
+<link href="css/login.css" rel="stylesheet">
+<link href="css/blue.css" rel="stylesheet"><!--check radio-->
+<!--<link href="css/verify.css" rel="stylesheet">--><!--验证-->
+<link rel="stylesheet" href="css/alert/sweetalert.css">
+<!--<link rel="stylesheet" href="css/bootstrapValidator.min.css">--><!--bootstrap表单验证-->
+</head>
+
+<body>
+
+  <div class="container">
+      <div class="container-box">
+        <!--登录-->
+         <div class="login-box form-signin-1">
+              <form class="registerform">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png"></a>
+                </div>
+                <div class="login-input">
+                   <div class="tip">
+                      <div class="well well-sm clearfix" id="loginTip" style="display: none">
+
+                      </div>
+                   </div>
+                   <div class="input-item">
+                      <div class="input-group">
+                         <span class="input-group-addon glyphicon glyphicon-user"></span>
+                         <input type="text" class="form-control mobile" value="请输入手机号" placeholder="请输入手机号"  nullmsg="请输入手机号！" errormsg="请输入11位手机号码" ignore="ignore" datatype="m" id="loginPhone">
+                         <div class="Validform_checktip"></div>
+                      </div>
+                      <div class="input-group">
+                         <span class="input-group-addon glyphicon glyphicon-lock"></span>
+                         <input name="pwdtext" id="pwdtext" type="text" class="form-control pwdtext" value="请输入密码" placeholder="请输入密码"/>
+                         <input name="password" id="pwdpwd" type="password" class="form-control pwdpwd" value=""  style="display:none; margin-bottom:0" placeholder="请输入密码" datatype="*6-16" nullmsg="请输入密码！" errormsg="密码范围在6~16位之间！" onkeyup="checkPass_length($(this))"/>
+                         <!--<input type="password" id="password22" class="form-control">-->
+
+
+                      </div>
+                      <div class="row">
+                         <div class="col-md-6">
+                            <div class="input-group">
+                               <input type="text" class="form-control" value="请输入图形验证码" placeholder="请输入图形验证码" style="width: 170px;" id="Verify_1" onkeyup="check_length($(this))"/>
+                            </div>
+                         </div>
+                         <div class="col-md-6">
+                            <div id="verify_0"></div>
+
+                         </div>
+                      </div>
+                      
+                   </div>
+                </div>
+               
+                <div class="checkbox">
+                  <!--<input tabindex="1" type="checkbox" id="input-1" id="remember">
+                  <label for="input-1">记住密码</label>-->
+                  <a href="javascript:;" class="forget" style="float:none" onClick="getVerify_code_find();">忘记密码？</a>
+                </div>
+                <button class="btn btn-lg btn-orange btn-block" type="button" id="login-btn">登录</button>
+                <p class="tip-2">您还没有橙果云购账户？<a href="javascript:;" class="reg" id="reg1" onClick="getVerify_code();">立即注册</a></p>
+                <div class="tip-3">
+                   <div class="tip-3-title">
+                     <div class="border"></div>
+                       <span>第三方登录</span>
+                   </div>
+                   <div class="web-login text-center">
+                      <a href="javascript:;" class="web-login-btn qq"></a>
+                      <a href="javascript:;" class="web-login-btn weixin"></a>
+                      <a href="javascript:;" class="web-login-btn sina"></a>
+                   </div>
+                </div>
+                <!--<button type="button" class="sao-btn"></button>--><!--打开微信扫一扫按钮隐藏-->
+              </form>
+        </div> 
+        <!--注册-->
+        <div class="login-box form-signin-2 cg-hide" id="form-signin-2">
+              <form class="">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png"></a>
+                </div>
+                <div class="login-input">
+                   <p class="tip-2 tip-2-2 clearfix" style="margin-bottom:15px">
+                     <span class="pull-left" style="color:#333; font-size:16px">注册</span>
+                     <span class="pull-right">
+                       已有账户？
+                       <a href="javascript:;" class="reg dologin">登录</a>
+                     </span>
+                   </p>
+                   <div class="input-item">
+                       <div class="tip">
+                          <div class="well well-sm" id="regTip" style="display: none">
+
+                          </div>
+                       </div>
+                      <div class="input-group">
+                         <span class="input-group-addon glyphicon glyphicon-user"></span>
+                         <input type="text" id="regPhone" class="form-control" value="请输入手机号" placeholder="请输入手机号">
+                      </div>
+                      <div class="row">
+                         <div class="col-md-6">
+                            <div class="input-group">
+                               <input type="text" class="form-control" value="请输入图形验证码" placeholder="请输入图形验证码" style="width: 170px;" id="Verify_0" onkeyup="check_length($(this))"/>
+                            </div>
+                         </div>
+                         <div class="col-md-6">
+                            <div id="verify"></div>
+                         </div>
+                      </div>
+                      
+                      
+                      
+                      <div class="row">
+                         <div class="col-md-6">
+                            <div class="input-group">
+                               <input type="text" class="form-control" value="请输入4位验证码" placeholder="请输入4位验证码" style="width: 170px;" id="valVerify" onkeyup="check_length($(this))"/>
+                            </div>
+                         </div>
+                         <div class="col-md-6">
+                            <input class="btn btn-lg btn-orange btn-block" type="button" id="getVerify" value="获取手机验证码"/>
+                         </div>
+                      </div>
+                      
+                     <!--  <div class="input-group">
+                         <span class="input-group-addon glyphicon glyphicon-link"></span>
+                         <input type="text" id="invite_code" class="form-control" value="" placeholder="邀请码（可选）">
+                      </div> -->
+                      
+                   </div>
+                </div>
+               
+                <!--<div class="checkbox">
+                  <input tabindex="1" type="checkbox" id="input-1">
+                  <label for="input-1">自动登录</label>
+                  <a href="javascript:;" class="forget">忘记密码？</a>
+                </div>-->
+                <button class="btn btn-lg btn-orange btn-block" type="button" id="register-btn">同意协议并注册</button>
+                <p class="tip-2 text-center" style="margin-bottom:30px">
+                  <a href="javascript:;" class="reg" style="color:#909090;" data-toggle="modal" data-target="#myModal" onclick="getArticle(438)">《服务协议》</a>
+                </p>
+                
+                <div class="tip-3">
+                   <div class="tip-3-title">
+                     <div class="border"></div>
+                       <span>第三方登录</span>
+                   </div>
+                   <div class="web-login text-center">
+                      <a href="#" class="web-login-btn qq"></a>
+                      <a href="#" class="web-login-btn weixin"></a>
+                      <a href="#" class="web-login-btn sina"></a>
+                   </div>
+                </div>
+                
+              </form>
+        </div> 
+        <!--注册手机号验证码都正确了之后  输入密码-->
+        <div class="login-box  cg-hide register-password">
+              <form class="">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png"></a>
+                </div>
+                <div class="login-input">
+                   <p class="tip-2 tip-2-2 clearfix" style="margin-bottom:15px">
+                     <span class="pull-left" style="color:#333; font-size:16px">注册</span>
+                     <span class="pull-right">
+                       已有账户？
+                       <a href="javascript:;" class="reg dologin">登录</a>
+                     </span>
+                   </p>
+                   <div class="input-item">
+                      <div class="tip">
+                          <div class="well well-sm" id="regTip2" style="display: none">
+
+                          </div>
+                       </div>
+                      <div class="input-group">
+                         <span class="input-group-addon glyphicon glyphicon-lock"></span>
+                         <input name="pwdtext" id="pwdtext2" type="text" class="form-control pwdtext" value="请输入密码" placeholder="请输入密码"/>
+                         <input name="password" id="pwdpwd2" type="password" class="form-control pwdpwd" value=""  style="display:none; margin-bottom:0" placeholder="请输入密码" datatype="*6-16" nullmsg="请输入密码！" errormsg="密码范围在6~16位之间！" onkeyup="checkPass_length($(this))"/>
+
+                      </div>
+                      <div class="input-group">
+                         <span class="input-group-addon glyphicon glyphicon-lock"></span>
+                         <input name="pwdtext" id="pwdtext3" type="text" class="form-control pwdtext" value="请再次输入密码" placeholder="请输入密码"/>
+                         <input name="password" id="pwdpwd3" type="password" class="form-control pwdpwd" value=""  style="display:none; margin-bottom:0" placeholder="请再次输入密码" datatype="*6-16" nullmsg="请输入密码！" errormsg="密码范围在6~16位之间！" onkeyup="checkPass_length($(this))"/>
+
+                      </div>
+
+                      <div class="row">
+                         
+                         <div class="col-md-6">
+                            <button class="btn btn-lg btn-orange btn-block" id="submit-reg" type="button" onclick="_hmt.push(['_trackEvent', 'convert', 'register', 'reg'])">确定</button>
+                         </div>
+                      </div>
+                      
+                      
+                   </div>
+                </div>
+
+                
+              </form>
+        </div>
+        <!--忘记密码-->
+        <div class="login-box form-signin-3 cg-hide">
+              <form class="">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png"></a>
+                </div>
+                <div class="login-input">
+                   <p class="tip-2 tip-2-2 clearfix" style="margin-bottom:15px">
+                     <span class="pull-left" style="color:#333; font-size:16px">找回密码</span>
+                     <span class="pull-right">
+                       彻底忘记？
+                       <a href="javascript:;" class="reg" id="reg2">注册</a>
+                     </span>
+                   </p>
+                   <div class="input-item">
+                      <div class="tip">
+                          <div class="well well-sm clearfix" id="findTip" style="display: none">
+
+                          </div>
+                      </div>
+                      <div class="input-group">
+                         <span class="input-group-addon glyphicon glyphicon-user"></span>
+                         <input type="text" class="form-control" value="请输入手机号" placeholder="请输入手机号" id="find_phone">
+                      </div>
+                      <div class="row">
+                         <div class="col-md-6">
+                            <div class="input-group">
+                               <input type="text" class="form-control" value="请输入图形验证码" placeholder="请输入图形验证码" style="width: 170px;" id="Verify_find" onkeyup="check_length($(this))"/>
+                            </div>
+                         </div>
+                         <div class="col-md-6">
+                            <div id="verify_find_pic"></div>
+                         </div>
+                      </div>
+                      
+                      <div class="row">
+                         <div class="col-md-6">
+                            <div class="input-group">
+                               <input type="text" class="form-control" value="请输入4位验证码" placeholder="请输入4位验证码" style="width: 170px;" id="find_verify" onkeyup="check_length($(this))"/>
+                            </div>
+                         </div>
+                         <div class="col-md-6">
+                            <input class="btn btn-lg btn-orange btn-block" type="button" id="get_find_verify" value="获取验证码">
+                         </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-6">
+                              <button class="btn btn-lg btn-orange btn-block" type="button" id="find_next">下一步</button>
+                           </div>
+                           <div class="col-md-2">
+                              <a href="javascript:;" class="return" style="line-height:43px; color:#333;">返回</a>
+                           </div>
+                       </div>
+                      
+                   </div>
+                </div>
+               
+                
+              </form>
+        </div>
+        <!--设置新密码-->
+        <div class="login-box form-signin-4 cg-hide">
+              <form class="">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png"></a>
+                </div>
+                <div class="login-input">
+                   <p class="tip-2 tip-2-2 clearfix" style="margin-bottom:15px">
+                     <span class="pull-left" style="color:#333; font-size:16px">请设置密码</span>
+                     <span class="pull-right">
+                       已有账号？
+                       <a href="javascript:;" class="reg dologin">登录</a>
+                     </span>
+                   </p>
+                   <div class="input-item">
+                      <div class="tip">
+                          <div class="well well-sm clearfix" id="findTip2" style="display: none">
+
+                          </div>
+                      </div>
+
+                      <div class="input-group">
+                         <span class="input-group-addon glyphicon glyphicon-lock"></span>
+                         <!--<input type="password" class="form-control" value="请输入新密码" placeholder="请输入新密码" id="find_pass">-->
+                         
+                         <input name="pwdtext" id="pwdtext4" type="text" class="form-control pwdtext" value="请输入新密码" placeholder="请输入新密码"/>
+                         <input name="password" id="find_pass" type="password" class="form-control pwdpwd" value=""  style="display:none; margin-bottom:0" placeholder="请输入新密码" datatype="*6-16" nullmsg="请输入新密码！" errormsg="密码范围在6~16位之间！" onkeyup="checkPass_length($(this))"/>
+                      </div>
+                      
+                      <div class="input-group">
+                         <span class="input-group-addon glyphicon glyphicon-lock"></span>
+                         <!--<input type="password" class="form-control" value="确认新密码" placeholder="确认新密码" id="find_repass">-->
+                         
+                         <input name="pwdtext" id="pwdtext5" type="text" class="form-control pwdtext" value="确认新密码" placeholder="确认新密码"/>
+                         <input name="password" id="find_repass" type="password" class="form-control pwdpwd" value=""  style="display:none; margin-bottom:0" placeholder="确认新密码" datatype="*6-16" nullmsg="确认新密码！" errormsg="密码范围在6~16位之间！" onkeyup="checkPass_length($(this))"/>
+                      </div>
+
+                     
+                   </div>
+
+                   <button class="btn btn-lg btn-orange btn-block" type="button" id="find_sibmit">确定</button>
+                </div>
+              </form>
+        </div>
+        <!--微信扫码登录-->
+        <div class="login-box form-signin-5 cg-hide">
+              <form class="">
+                <div class="sao-title text-center">
+                   扫码登录
+                   <!--<span class="close"></span>-->
+                   <span aria-hidden="true" class="cg-close pull-right">×</span>
+                </div>
+                <div class="sao-body">
+                    <img src="images/login/code2.png" width="216" height="216">
+                    <p class="tip-2" style="font-size:14px">请使用微信扫码登录“橙果云购”</p>
+                    <a href="javascript:;" class="fresh-btn">
+                       <span class="glyphicon glyphicon-repeat"></span>
+                       刷新二维码
+                    </a>
+                </div>
+                <span class="sao-btn sao-btn2"></span>
+              </form>
+        </div>
+        
+     </div>
+
+  </div>
+  <div class="cg-footer">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center cg-footer-nav">
+                  <p class="footer-menu">
+                      <a href="index.html">首页</a>
+                      <a href="help-article.html?pid=448" target="_blank">关于橙果</a>
+                      <a href="help-article.html?pid=450" target="_blank">加入我们</a>
+                      <a href="help-article.html?pid=449" target="_blank">联系我们</a>
+                  </p>
+                  <p class="footer-copyright">Copyright © 2015-2016 , 版权所有 粤ICP备15095358号-1</p>
+              </div>
+          </div>
+      </div>
+  </div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+      </div>
+      <div class="modal-body" id="agreement">
+
+          <div class="loading"></div>
+
+      </div>
+      <div class="modal-footer">
+        <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+        <button type="button" class="btn btn-primary btn-orange" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/data/connect_url.js"></script>
+<script src="js/data/common.js"></script>
+<script src="js/jquery.md5.js"></script>
+<script src="js/bootstrap.min.js"></script>    
+<script src="js/icheck.js"></script>
+<script src="js/date-transite.js"></script><!--时间戳格式化-->
+<!--<script src="js/Validform_v5.3.2_min.js"></script>-->
+<script src="js/alert/sweetalert.min.js"></script><!--弹出框-->
+<script src="js/data/register-login.js"></script>
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?a5b3dd96c6e708ebd22e3877647d2da6";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+<script type="text/javascript">
+  $(function(){
+
+      if($(window).height()<=700)
+      {
+          $(".cg-footer").css("position","relative");
+      }
+      else
+      {
+          $(".cg-footer").css("position","fixed");
+      }
+	 $(".checkbox input").iCheck({
+              checkboxClass: 'icheckbox_square-orange',
+              radioClass: 'iradio_square-blue',
+              increaseArea: '20%'
+            }); 
+	 $("#reg1").click(function(){
+		$(".form-signin-1").fadeOut(100);
+		$(".form-signin-2").fadeIn(500);
+         $(".container-box").height("600px");
+         $(".cg-footer").css("position","relative");
+         get_verify();
+	  });
+	  $(".dologin").click(function(){
+		$(".form-signin-2").fadeOut(100);
+		$(".register-password").fadeOut(100);
+		$(".form-signin-1").fadeIn(500);
+          $(".container-box").height("500px");
+          $(".cg-footer").css("position","fixed");
+          get_verify();
+	  });
+	  $(".forget").click(function(){
+		$(".form-signin-1").fadeOut(100);
+		$(".form-signin-3").fadeIn(500);
+          get_verify();
+	  });
+	  $(".return").click(function(){
+		$(".form-signin-3").fadeOut(100);
+		$(".form-signin-1").fadeIn(500);
+	  });
+	  $("#reg2").click(function(){
+		$(".form-signin-3").fadeOut(100);
+		$(".form-signin-2").fadeIn(500);
+	  });
+	  $(".sao-btn").click(function(){
+		$(".form-signin-1").fadeOut(100);
+		$(".form-signin-5").fadeIn(500);
+	  });
+	  $(".sao-btn2").click(function(){
+		 $(".form-signin-5").fadeOut(100);
+		 $(".form-signin-1").fadeIn(500); 
+	   })
+	  $(".cg-close").click(function(){
+		$(".form-signin-5").fadeOut(100);
+		$(".form-signin-1").fadeIn(500);
+	  });
+	  /*表单提示*/
+	  $('.form-control').bind({
+		  focus: function () {
+			  if (this.value == this.defaultValue) {
+				  this.value = "";
+			  }
+		  },
+		  blur: function () {
+			  if (this.value == "") {
+				  this.value = this.defaultValue;
+			  }
+		  }
+	  });
+	  $(".pwdtext").focus(function () {
+		  var obj = $(this);
+		  var type = obj.attr("type");
+		  if (type == "text") {
+			 // obj.css("display", "none");
+			 obj.hide();
+			  obj.next().css("display", "table-cell").focus();
+		  }
+		  
+	  });
+	  $(".pwdpwd").blur(function () {
+		  var obj = $(this);
+		  var type = obj.attr("type");
+		  if (type == "password") {
+			  if (obj.val() == "") {
+				 // obj.css("display", "none");
+				 obj.hide();
+				  obj.prev().css("display", "table-cell");
+			  }
+		  }
+	  });
+
+  })
+</script>
+
+</body>
+</html>

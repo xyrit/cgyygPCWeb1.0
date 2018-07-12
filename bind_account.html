@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>登录注册</title>
+<!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+<link href="css/site.min.css" rel="stylesheet">
+<link href="css/bootflat.min.css" rel="stylesheet">
+<link href="css/login.css" rel="stylesheet">
+<link href="css/blue.css" rel="stylesheet"><!--check radio-->
+<link href="css/verify.css" rel="stylesheet"><!--验证-->
+<link rel="stylesheet" href="css/alert/sweetalert.css">
+<!--<link rel="stylesheet" href="css/bootstrapValidator.min.css">--><!--bootstrap表单验证-->
+</head>
+
+<body>
+
+  <div class="container">
+      <div class="container-box">
+
+        <div class="login-box form-signin-3">
+              <form class="">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png"></a>
+                </div>
+                <div class="login-input">
+                   <div class="row" style="margin-bottom: 20px;">
+                       <div class="col-md-3 col-sm-3">
+                           <img src="images/default1.png" width="70" height="70" class="bind_pic"/>
+                       </div>
+                       <div class="col-md-9 col-sm-9" style="margin-top: 10px;">
+                           <p class="bind_nickname"></p>
+                           <p class="bind_tipContent">请绑定手机，以方便中奖时获得短信通知！</p>
+                       </div>
+
+                   </div>
+                   <div class="input-item">
+                      <div class="tip" style="display: none">
+                          <div class="well well-sm clearfix" id="findTip">
+
+                          </div>
+                      </div>
+                      <div class="input-group">
+                         <span class="input-group-addon glyphicon glyphicon-user"></span>
+                         <input type="text" class="form-control" value="请输入手机号" placeholder="请输入手机号" id="find_phone">
+                      </div>
+
+                      <div class="row">
+                         <div class="col-md-6">
+                            <div class="input-group">
+                               <input type="text" class="form-control" value="请输入4位验证码" placeholder="请输入4位验证码" style="width: 170px;" id="find_verify" onkeyup="check_length($(this))"/>
+                            </div>
+                         </div>
+                         <div class="col-md-6">
+                            <!--<input class="btn btn-lg btn-orange btn-block" type="button" id="get_find_verify" value="获取验证码">-->
+                             <button class="btn btn-lg btn-orange btn-block" type="button" id="get_find_verify" >获取验证码</button>
+                         </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-12">
+                              <button class="btn btn-lg btn-orange btn-block" type="button" id="find_next">绑定</button>
+                           </div>
+
+                       </div>
+                      
+                   </div>
+                </div>
+               
+                
+              </form>
+        </div>
+        <!--设置新密码-->
+        <div class="login-box form-signin-4 cg-hide">
+              <form class="">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png"></a>
+                </div>
+                <div class="login-input">
+                    <div class="row" style="margin-bottom: 20px;">
+                        <div class="col-md-3 col-sm-3">
+                            <img src="images/default1.png" width="70" height="70" class="bind_pic"/>
+                        </div>
+                        <div class="col-md-9 col-sm-9" style="margin-top: 15px;">
+                            <p class="bind_nickname">欢迎您，！</p>
+                            <p class="bind_tipContent">请绑定手机，以方便中奖时获得短信通知！</p>
+                        </div>
+
+                    </div>
+                   <div class="input-item">
+                      <div class="tip" style="display: none">
+                          <div class="well well-sm clearfix" id="findTip2" style="display: none">
+                             <!--<img src="images/login/tips.png">
+                             公共场所不建议自动登录，以防账号丢失-->
+                          </div>
+                      </div>
+
+                      <div class="input-group">
+                         <span class="input-group-addon glyphicon glyphicon-lock"></span>
+
+                         <input name="pwdtext" id="pwdtext3" type="text" class="form-control pwdtext" value="请输入新密码" placeholder="请输入新密码"/>
+                         <input name="password" id="find_pass" type="password" class="form-control pwdpwd" value=""  style="display:none; margin-bottom:0" placeholder="请输入新密码" datatype="*6-16" nullmsg="请输入新密码！" errormsg="密码范围在6~16位之间！" onkeyup="checkPass_length($(this))"/>
+                      </div>
+                      
+                      <div class="input-group">
+                         <span class="input-group-addon glyphicon glyphicon-lock"></span>
+
+                         <input name="pwdtext" id="pwdtext3" type="text" class="form-control pwdtext" value="确认新密码" placeholder="确认新密码"/>
+                         <input name="password" id="find_repass" type="password" class="form-control pwdpwd" value=""  style="display:none; margin-bottom:0" placeholder="确认新密码" datatype="*6-16" nullmsg="确认新密码！" errormsg="密码范围在6~16位之间！" onkeyup="checkPass_length($(this))"/>
+                      </div>
+
+                   </div>
+
+                   <button class="btn btn-lg btn-orange btn-block" type="button" id="find_sibmit" onclick="_hmt.push(['_trackEvent', 'convert', 'register', 'reg'])">确定</button>
+                </div>
+              </form>
+        </div>
+
+        
+     </div>  
+     
+     
+ </div>  
+ <div class="cg-footer">
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center cg-footer-nav">
+             <p class="footer-menu">
+               <a href="index.html">首页</a>
+               <a href="help-article.html?pid=448" target="_blank">关于橙果</a>
+               <a href="help-article.html?pid=450" target="_blank">加入我们</a>
+               <a href="help-article.html?pid=449" target="_blank">联系我们</a>
+             </p>
+             <p class="footer-copyright">Copyright © 2015-2016 , 版权所有 粤ICP备15095358号-1</p>
+          </div>
+       </div> 
+    </div>
+ </div> 
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jquery.cookie.js"></script>
+<script src="js/data/connect_url.js"></script>
+<script src="js/data/common.js"></script>
+<script src="js/jquery.md5.js"></script>
+<script src="js/bootstrap.min.js"></script>    
+<script src="js/icheck.js"></script>
+<!--<script src="js/bootstrapValidator.min.js"></script>-->
+<script src="js/Validform_v5.3.2_min.js"></script>
+<script src="js/alert/sweetalert.min.js"></script><!--弹出框-->
+<script src="js/data/bind_account.js"></script>
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+          var hm = document.createElement("script");
+          hm.src = "//hm.baidu.com/hm.js?a5b3dd96c6e708ebd22e3877647d2da6";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+      })();
+  </script>
+<script type="text/javascript">
+  $(function(){
+	 $(".checkbox input").iCheck({
+              checkboxClass: 'icheckbox_square-orange',
+              radioClass: 'iradio_square-blue',
+              increaseArea: '20%'
+            }); 
+
+	  $(".forget").click(function(){
+		$(".form-signin-1").fadeOut(100);
+		$(".form-signin-3").fadeIn(500);
+	  });
+	  $(".return").click(function(){
+		$(".form-signin-3").fadeOut(100);
+		$(".form-signin-1").fadeIn(500);
+	  });
+	  $("#reg2").click(function(){
+		$(".form-signin-3").fadeOut(100);
+		$(".form-signin-2").fadeIn(500);
+	  });
+
+	  /*表单提示*/
+	  $('.form-control').bind({
+		  focus: function () {
+			  if (this.value == this.defaultValue) {
+				  this.value = "";
+			  }
+		  },
+		  blur: function () {
+			  if (this.value == "") {
+				  this.value = this.defaultValue;
+			  }
+		  }
+	  });
+	  $(".pwdtext").focus(function () {
+		  var obj = $(this);
+		  var type = obj.attr("type");
+		  if (type == "text") {
+			 // obj.css("display", "none");
+			 obj.hide();
+			  obj.next().css("display", "table-cell").focus();
+		  }
+		  
+	  });
+	  $(".pwdpwd").blur(function () {
+		  var obj = $(this);
+		  var type = obj.attr("type");
+		  if (type == "password") {
+			  if (obj.val() == "") {
+				 // obj.css("display", "none");
+				 obj.hide();
+				  obj.prev().css("display", "table-cell");
+			  }
+		  }
+	  });
+      //获取地址栏传过来参数
+      function GetQueryString(data)
+      {
+          var reg = new RegExp("(^|&)"+ data +"=([^&]*)(&|$)");
+          var r = window.location.search.substr(1).match(reg);
+          if(r!=null)return  unescape(r[2]); return null;
+      }
+      var regist=GetQueryString('regist');
+      if(regist==1){
+          $(".form-signin-2").fadeIn();
+      }
+
+	  
+  })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <title>商品详情-橙果云购</title>
+    <link href="css/site.min.css" rel="stylesheet">
+    <link href="css/bootflat.min.css" rel="stylesheet">
+    <link href="css/yiyuan.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/alert/sweetalert.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <style>
+      .all-sort-list{width:200px; display:none}
+      .item-list .cat-right { position: absolute; right: 0;}
+      .all-sort-list .item.bo{width:200px;}
+      .menu .all-sort{top:0}
+      .all-sort-list .item-list{left:200px;}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+  <!--加载头部三个分块文件 start-->
+  <div id="head_top"></div>
+  <div id="head_select"></div>
+  <div id="head_menu_2"></div>
+  <!--加载头部三个分块文件 end-->
+
+    <!--中间内容****-->
+    <div class="container">
+       <!--当前位置-->
+       <div class="row">
+         <ol class="breadcrumb cg-breadcrumb">
+            <li><a href="#" id="nowPosition">手机</a></li>
+            <li class="active">商品详情【期号：<span id="lottery_id"></span>】</li>
+
+          </ol>
+       </div>
+       <!--商品内容-->
+       <div class="row">
+          <div class="col-md-4 col-sm-4">
+              <div class="goods-box">
+                <div class="tb-booth tb-pic tb-s310" id="first-img">
+                    <div class="loading"></div>
+
+                </div>
+                <ul class="tb-thumb" id="thumblist">
+                      <div class="loading"></div>
+
+                </ul>
+            </div>
+            <!--分享代码-->
+
+          </div>
+          <!--基本内容-->
+          <div class="col-md-5 col-sm-5">
+             <div class="basic-info pull-right">
+                <h1 id="goodsTitle">
+                </h1>
+                <div class="cg-progress-pre margin-t-8">
+                  <p>总需：<span class="text-red-big" id="need_count"><!--452122--></span>人次</p>
+                  <div class="progress cg-progress cg-progress2" id="progress">
+                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+                      <span class="sr-only">60% Complete (warning)</span>
+                    </div>
+                  </div>
+                  <ul class="list-group row cg-progress-text">
+                     <li class="list-group-item pull-left clearfix col-md-4">
+                       <p class="text-gray nomargin" id="attend_count"><!--565656--></p>
+                       <p class="nomargin">已参与人次</p>
+                     </li>
+                     
+                     <li class="list-group-item pull-right clearfix col-md-4">
+                       <p class="text-danger nomargin" id="remain"><!--565656--></p>
+                       <p class="text-danger nomargin">剩余人次</p>
+                     </li>
+                  </ul>
+               </div>
+               <div class="count count2 clearfix">
+                  <span class="pull-left line-height-30">参与:</span>
+                  <div class="clearfix add-red add-red2 pull-left">
+                      
+                      <span class="reduce" onClick="red();">-</span>
+                      <input class="count-input" type="text" value="1" id="count-input">
+                      <span class="add" onClick="add();">+</span>
+                   </div>
+                   <span class="pull-left line-height-30">人次</span>
+                   <p class="add-red-p text-danger pull-left margin-l-10">购买人次越多获得几率越大哦！</p>
+               </div>
+               <div class="row margin-t-8">
+                  <div class="col-md-6 col-sm-6">
+                    <a href="javascript:;"><button type="button" class="btn cg-btn-danger cg-btn-fixed-round cg-gouwu" id="nowAdd">立即参与</button></a>
+                  </div>
+                  <div class="col-md-6 col-sm-6">
+                    <button type="button" class="btn cg-btn-danger cg-btn-fixed-round cg-gouwu btn-bg-blue" id="addTocarBtn">加入购物车</button>
+                  </div>
+               </div>
+               <div class="how clearfix">
+                   <ul class="list-group">
+                      <li class="list-group-item pull-left"><span>三大保证：</span></li>
+                      <li class="list-group-item pull-left">
+                         <img src="images/footer4.jpg" width="20" height="20">
+                         100%公平公正
+                      </li>
+                      <li class="list-group-item pull-left">
+                         <img src="images/footer5.jpg" width="20" height="20">
+                         100%正品保证
+                      </li>
+                      <li class="list-group-item pull-left">
+                         <img src="images/footer6.jpg" width="20" height="20">
+                         全国免运费
+                      </li>
+                   </ul>
+               </div>
+               <div>
+                 <img src="images/201503.jpg">
+               </div>
+               <div class="takein" id="takein">
+                   <span class="top-triangle"></span>
+                   <p class="nomargin">您参与了：<span class="text-danger" id="myAttend_count"><!--1000--></span>人次</p>
+                   <div class="clearfix">
+                     <p class="pull-left luck-title nomargin">幸运码：</p>
+                     <p class="nomargin luck-num pull-left" id="luckyCode0">
+
+                       <a href="javascript:;" data-toggle="modal" data-target="#myModal" class="text-blue">查看所有号码>></a>
+                     </p>
+                   </div>
+               </div>
+             </div> 
+          </div>
+          <div class="col-md-3 col-sm-3">
+             <div class="lottery pull-right">
+                <h1 class="lottery-title">
+                  开奖信息
+                </h1>
+                <div class="lottery-content" id="lottery-content">
+                   <div class="loading"></div>
+
+                </div>
+             </div>
+          </div>
+       </div>
+       <!--商品基本信息结束-->
+       <div class="row">
+          <div class="col-md-12 col-sm-12">
+             <div class="goods-box-tab margin-b-20">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                  <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">商品详情</a></li>
+                  <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">所有参与记录</a></li>
+                  <li role="presentation"><a href="#profile2" aria-controls="profile2" role="tab" data-toggle="tab" id="comment-btn">晒单</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="home">
+
+                     <div id="content">
+                        <div class="loading"></div>
+                     </div>
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="profile">
+                     <!--参与记录数据-->
+                     <table class="table table-hover detail-table">
+                        <thead>
+                          <tr>
+                            <th>时间</th>
+                            <th>会员</th>
+                            <th>参与人次</th>
+                            <th>操作</th>
+                            <th>IP</th>
+                            <th>来源</th>
+                          </tr>
+                        </thead>
+                        <tbody id="attendList">
+                            <div class="loading"></div>
+                        </tbody>
+                     </table>
+                     <!--弹出框-->
+
+                      <!--分页-->
+                       <nav class="text-center page">
+                            <ul class="pagination clearfix nomargin" id="pagination">
+
+                            </ul>
+                            <div class="count-box nomargin">
+                              <div class="count-num">
+                               共<em id="a_pageCount">5</em>页<!--，-->
+                              </div>
+
+                            </div>
+                       </nav>
+                       <!--分页-->
+                     <!--参与记录数据结束-->
+                  </div>
+                  <div role="tabpanel" class="tab-pane" id="profile2">
+                     <!--评论晒单-->
+                     <div class="comment" id="commentContent">
+                        <h3 class="title">本商品已有<span id="disList_user_count" class="text-danger padding-l-r-5"></span>位幸运用户晒单</h3>
+                        <div class="loading"></div>
+
+                     </div>   
+                  </div>
+                </div>  
+             </div>
+          </div>
+       </div>
+       
+       <!--帮助信息-->
+
+       
+    </div>
+  <!--版权*****友情链接-->
+  <div id="footer_content"></div>
+  <!--版权*****友情链接-->
+    <!--中间内容*************-->
+
+    <!--右边，右边栏，返回顶部-->
+    <div id="foot_right"></div>
+    <!--右边，右边栏，返回顶部-->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-2" role="document">
+        <div class="modal-content modal-content-2">
+          <div class="modal-header modal-header-2">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myAttend_count2">我总共参与了</h4>
+          </div>
+          <div class="modal-body" id="luckyCode">
+             <div class="well">
+               <p class="text-gray2"></p>
+               <p></p>
+             </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/data/connect_url.js"></script>
+    <script src="js/data/common.js"></script>
+      <script>
+          // 加载头部--------------公共头部
+          $("#head_top").load('head_top.html');
+          $("#head_select").load('head_select.html');
+          $("#head_menu_2").load('head_menu_2.html');
+          //加载底部
+          $("#footer_content").load('footer_copyright.html');
+          $("#foot_right").load('foot_right.html');
+
+      </script>
+    <script src="js/alert/sweetalert.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/date-transite.js"></script><!--时间戳格式化-->
+    <script src="js/data/goods-datails-no_lottery.js"></script>
+  <!--<script src="js/data/search.js"></script>--><!--搜索商品-->
+    <script src="js/data/addToCar.js"></script><!--添加商品进购物车-->
+    <script src="js/jquery.imagezoom.min.js"></script>
+    <script src="js/magnify-smalltobig.js"></script> 
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/addToCarBtn.js"></script><!--点击加入购物车弹出+1-->
+  </body>
+</html>
+

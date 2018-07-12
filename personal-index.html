@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico">
+    <title>我的橙果 - 橙果云购</title>
+    <meta name="keywords" content="1元，一元，一元云购，一元夺宝，1元云购，1元夺宝，一元购，1元购，橙果云购，橙果一元购，橙果1元购"/>
+    <meta name="description" content="橙果云购是一个新型的、专业的众筹式购物商城。只需1元，您就有机会获得一件商品。橙果云购将倾力打造一个公正公平公开的环境，让您的生活充满惊喜！"/>
+    <link href="css/site.min.css" rel="stylesheet">
+    <link href="css/bootflat.min.css" rel="stylesheet">
+    <link href="css/yiyuan.css" rel="stylesheet">
+    <link href="css/personal-center/personal-center.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/alert/sweetalert.css">
+    <link href="css/blue.css" rel="stylesheet"><!--check radio-->
+    <link rel="stylesheet" href="css/user/business.css" ><!--0元创业-->
+    <link rel="stylesheet" href="css/font-awesome.min.css" ><!--字体图标-->	
+	<link rel="stylesheet" type="text/css" href="css/user/jcDate.css" media="all" />
+	<link rel="stylesheet" type="text/css" media="all" href="css/user/daterangepicker-bs3.css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <style>
+      .all-sort-list{width:200px; display:none}
+      .item-list .cat-right { position: absolute; right: 0;}
+      .all-sort-list .item.bo{width:200px;}
+      .menu .all-sort{top:0}
+      .all-sort-list .item-list{left:200px;}
+
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+  <!--加载头部三个分块文件 start-->
+  <div id="head_top"></div>
+  <div id="head_select"></div>
+  <div id="head_menu_2"></div>
+  <!--加载头部三个分块文件 end-->
+
+    <!--中间内容****-->
+
+    <div class="per-head">
+        <div class="container">
+          <div class="row">
+             <div class="col-md-8 col-sm-8" id="welcomeInfo">
+                <div class="pull-left uesrPic per-head-p" id="userPic">
+                    <!--<img src="images/default1.png">-->
+                </div>
+                <div style="margin-left:60px">
+                    <p class="per-head-p">您好！<span id="myName"></span></p>
+                    <div class="per-headBasic clearfix">
+                       <ul class="list-group">
+                          <li>
+                             ID：<span class="margin-r-5" id="userId"></span>|
+                          </li>
+                          <li>
+                          手机号：
+                            <span id="userPhone"></span>
+                            <a href="javascript:;" class="margin-r-5" onclick="sys_info();">修改</a>|
+                          </li>
+                          <li>
+                            昵称：
+                            <span class="margin-r-5" id="myName2"></span><a href="javascript:;" class="margin-r-5" onclick="sys_info();">修改</a>
+                          </li>
+
+                       </ul> 
+                    </div>
+                </div>
+                
+             </div>
+             <div class="col-md-4 col-sm-4 clearfix margin-t-30" id="myBtnGroup">
+                 <!--<div class="per-dot dot1">
+                    <a href="javascript:;" class="dot-a1" id="signA">
+                       <span>签到</span>
+                       <p id="signInText"></p>
+                    </a>
+                 </div>-->
+                 <div class="per-dot dot2">
+                    <a href="javascript:;" class="dot-a2" onclick="sys_info();"><!--有待商榷-->
+                       <span>密码</span>
+                       <p>修改密码</p>
+                    </a>
+                 </div>
+                 <div class="per-dot dot3">
+                    <a href="javascript:;" class="dot-a3" onClick="addList();addressList();">
+                       <span>地址</span>
+                       <p>收货地址</p>
+                    </a>
+                 </div>
+             </div>
+           </div>
+        </div>
+    </div>
+    <!--个人中心头部结束-->
+    <!--中间内容开始-->
+    <div  class="container">
+       <div class="row">
+           <div class="col-md-2 col-sm-2 nopadding-left">
+             <ul class="list-group per-list-group" id="personalMenu">
+                 <li class="list-group-item" id="myAccount"><a href="javascript:;">我的账户</a></li>
+                 <li class="list-group-item" id="moneyDetail"><a href="javascript:;">充值记录</a></li>
+                 <li class="list-group-item" id="attendRecord"><a href="javascript:;">参与记录</a></li>
+                 <li class="list-group-item" id="luckyRecord"><a href="javascript:;">中奖记录</a></li>
+                 <li class="list-group-item" id="myComment"><a href="javascript:;">我的晒单</a></li>
+                 <!--<li class="list-group-item" id="business"><a href="javascript:business();">0元创业</a></li>-->
+                 <!--<li class="list-group-item" id="myIntegral"><a href="javascript:myIntegral();">积分消费</a></li>-->
+                 <!--<li class="list-group-item" id="myMoney"><a href="javascript:;">我的红包</a></li>-->
+                 <!--<li class="list-group-item" id="inviteFriend"><a href="javascript:;">邀请好友</a></li>-->
+                 <li class="list-group-item" id="myAddres"><a href="javascript:;">收货地址</a></li>
+                 <li class="list-group-item" id="mySystem"><a href="javascript:;">个人设置</a></li>
+              </ul>
+           </div>
+           <div class="col-md-10 col-sm-10" id="rightContent" >
+
+
+           </div>
+           
+  
+       </div>
+    </div>
+
+    <div class="container">
+
+
+      
+    </div>
+  <!--版权*****友情链接-->
+  <div id="footer_content"></div>
+  <!--版权*****友情链接-->
+    <!--中间内容*************-->
+
+    <!--右边，右边栏，返回顶部-->
+    <div id="foot_right"></div>
+    <!--右边，右边栏，返回顶部-->
+    <!--查看参与记录 弹出框-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+      <div class="modal-dialog modal-dialog-2" role="document">
+        <div class="modal-content modal-content-2">
+          <div class="modal-header modal-header-2">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myAttend_count2">我总共参与了</h4>
+          </div>
+          <div class="modal-body" id="luckyCode">
+             <div class="well">
+               <p class="text-gray2"></p>
+               <p></p>
+             </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--查看晒单中的图片 弹出框+轮播-->
+    <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+      <div class="modal-dialog modal-dialog-2" role="document">
+        <div class="modal-content modal-content-2">
+          <div class="modal-header modal-header-2">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">晒单图片</h4>
+          </div>
+          <div class="modal-body" id="">
+             <div class="well" id="myCarouselBox" style="padding: 10px 0px;">
+
+             </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!--第三方登录时，修改地址时，弹出的去绑定手机号 弹出框-->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+      <div class="modal-dialog modal-dialog-2" role="document">
+        <div class="modal-content modal-content-2">
+          <div class="modal-header modal-header-2">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h6 class="modal-title">绑定手机号</h6>
+          </div>
+          <div class="modal-body">
+             <div class="well nomargin">
+                <div class="row">
+                    <div class="col-md-3 text-right">
+                       <span class="line-height-34">手机号码：</span>
+                    </div>
+                <div class="col-md-5">
+                   <p style="line-height: 34px;"><input class="form-control" placeholder="手机号码" id="getPhone" type="text"></p>
+                </div>
+                <div class="col-md-4">
+                   <input class="btn cg-btn-square btn-sm" onclick="settime_address_3(this);get_phoneIn();" value="免费获取验证码" type="button">
+                </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-md-3 text-right">
+                      <span class="line-height-34">手机验证码：</span>
+                  </div>
+                <div class="col-md-5">
+                    <p><input class="form-control" placeholder="手机验证码" id="verify-bind" type="text"></p>
+                </div>
+                </div>
+             </div>
+          </div>
+
+          <div class="modal-footer" style="text-align:center;">
+            <button onclick="bindPhone_last();" type="button" class="btn cg-btn-danger cg-btn-fixed-round" id="bind-btn">保存</button>
+            <button type="button" class="btn cg-btn-danger cg-btn-fixed-round" data-dismiss="modal">取消</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.md5.js"></script>
+    <script src="js/data/common.js"></script>
+      <script>
+          // 加载头部--------------公共头部
+          $("#head_top").load('head_top.html');
+          $("#head_select").load('head_select.html');
+          $("#head_menu_2").load('head_menu_2.html');
+          //加载底部
+          $("#footer_content").load('footer_copyright_2.html');
+          $("#foot_right").load('foot_right.html');
+
+      </script>
+    <script src="js/alert/sweetalert.min.js"></script><!--弹出框-->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/Math.uuid.js"></script><!--生成uuid 唯一标识 用于图片上传图片的唯一性-->
+    <script src="js/date-transite.js"></script><!--时间戳格式化-->
+    <script src="js/data/connect_url.js"></script>
+    <script src="js/data/personal-common.js"></script>
+    <script src="js/data/personal-lottery.js"></script><!--中奖记录 因为方法在personal-index.js调用，所以必须先加载-->
+    <script src="js/data/personal-system.js"></script><!--个人设置 修改资料-->
+    <script src="js/data/personal-index.js"></script><!--个人账户，参与记录-->
+    <script src="js/data/personal-discuss.js"></script><!--评论晒单-->
+    <script src="js/data/personal-myMoney.js"></script><!--我的资金明细-->
+    <script src="js/data/personal-addDiscuss.js"></script><!--添加评论-->
+    <script src="js/data/personal-myAddres.js"></script><!--我的地址-->
+    <script src="js/data/addToCar.js"></script>
+    <script type="text/javascript" src="js/My97DatePicker/WdatePicker.js"></script>
+    <script src="js/uploadPic/file_upload_plug.js"></script><!--多图片上传预览-->
+    <script src="js/jsAddress.js"></script><!--省市县三级联动-->
+  <!--<script src="js/data/search.js"></script>--><!--搜索商品-->
+    <script src="js/addToCarBtn.js"></script><!--点击加入购物车弹出+1-->
+    <script src="js/icheck.js"></script>
+    <script src="js/plupload-2.1.2/js/plupload.full.min.js"></script>
+    <!--<script src="js/plupload-2.1.2/js/upload.js"></script>--><!--多图片上传并且预览。阿里云 OSS web直传 存在异步问题，此文件内容已经在personal-addDiscuss.js文件中-->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="js/user/clipboard.min.js"></script>
+    <script src="js/user/business.js"></script><!--0元创业-->
+	  <script src="js/user/laydate.dev.js"></script><!--日期-->
+  </body>
+</html>
+

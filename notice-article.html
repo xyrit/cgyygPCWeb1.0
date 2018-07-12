@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico">
+    <title>公告详情</title>
+    <link href="css/site.min.css" rel="stylesheet">
+    <link href="css/bootflat.min.css" rel="stylesheet">
+    <link href="css/yiyuan.css" rel="stylesheet">
+    <link href="css/personal-center/personal-center.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/alert/sweetalert.css">
+    <link href="css/blue.css" rel="stylesheet"><!--check radio-->
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <style>
+      .all-sort-list{width:200px; display:none}
+      .item-list .cat-right { position: absolute; right: 0;}
+      .all-sort-list .item.bo{width:200px;}
+      .menu .all-sort{top:0}
+      .all-sort-list .item-list{left:200px;}
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+  <!--加载头部三个分块文件 start-->
+  <div id="head_top"></div>
+  <div id="head_select"></div>
+  <div id="head_menu_2"></div>
+  <!--加载头部三个分块文件 end-->
+
+    <!--个人中心头部结束-->
+    <!--中间内容开始-->
+    <div  class="container margin-b-35">
+       <div class="row">
+           <div class="col-md-3 col-sm-3 nopadding-left">
+             <ul class="list-group article-list-group" id="articleList">
+                 <li class="list-group-item"><h3>文章列表</h3></li>
+                 <div class="loading"></div>
+                 <!--<li class="list-group-item"><a href="javascript:;">文章1</a></li>
+                 <li class="list-group-item"><a href="javascript:;">文章发给过覆盖</a></li>
+                 <li class="list-group-item"><a href="javascript:;">文章苟富贵发给过覆盖</a></li>
+                 <li class="list-group-item"><a href="javascript:;">文章广泛覆盖发广告</a></li>
+                 <li class="list-group-item"><a href="javascript:;">文章舒服舒服</a></li>
+                 <li class="list-group-item"><a href="javascript:;">文章让人方法</a></li>-->
+              </ul>
+           </div>
+           <div class="col-md-9 col-sm-9" id="rightContent">
+              <!--右边显示内容，当点击左边菜单时，ajax请求数据并加载其中-->
+               
+              <!--<div class="row">
+                  <div class="per-goods-box nomargin">
+                      <div class="per_time_tab-content">
+                          <h3 class="right_h3 text-center" id="articleTitle">标题标题标题标题标题标题标题标题</h3>
+                          <p class="text-center nomargin" id="articleTime">发布时间：2016-12-22</p>
+                          <hr class="cg-hr"/>
+                          <div class="article-text" id="articleContent">
+                              <div class="loading"></div>
+                          </div>
+                      </div>
+                  </div>
+              </div>-->
+           </div>
+       </div>
+    </div>
+    
+    <div class="container">
+       <!--当前位置-->
+       
+       <!--所有商品-->
+       
+       
+       <!--商品列表-->
+       <!--商品结束-->
+       
+       <!--分页-->
+       <!--<nav class="text-center page">
+            <ul class="pagination clearfix" id="pagination">
+             
+            </ul>
+            <div class="count-box">
+              <div class="count-num">
+               共<em id="pageCount"></em>页
+              </div>
+              
+            </div> 
+       </nav>-->
+       <!--分页-->
+       
+       <!--帮助信息-->
+       <!--<div class="row">
+          <div class="help clearfix">
+             <div class="col-lg-2 col-md-2 col-sm-3 col-md-offset-1">
+                <dl class="help-item guide">
+                  <dt>新手指南</dt>
+                  <dd><a href="#" class="text-gray">了解橙果云购</a></dd>
+                  <dd><a href="#" class="text-gray">常见问题</a></dd>
+                  <dd><a href="#" class="text-gray">服务协议</a></dd>
+                </dl>
+             </div>
+             <div class="col-lg-2 col-md-2 col-sm-3">
+                <dl class="help-item security">
+                  <dt>橙果云购保障</dt>
+                  <dd><a href="#" class="text-gray">安全保障</a></dd>
+                  <dd><a href="#" class="text-gray">公平保障</a></dd>
+                </dl>
+             </div>
+             <div class="col-lg-2 col-md-2 col-sm-3">
+                <dl class="help-item chengguo">
+                  <dt>携手橙果云购</dt>
+                  <dd><a href="#" class="text-gray">商务合作</a></dd>
+                  <dd><a href="#" class="text-gray">邀请</a></dd>
+                  <dd><a href="#" class="text-gray">橙果交流群</a></dd>
+                </dl>
+             </div>
+             <div class="col-lg-2 col-md-2 col-sm-2 text-center">
+               <img src="images/code.jpg">
+               <p class="text-center">关注官方微信</p>
+             </div>
+             <div class="col-lg-2 col-md-2 col-sm-2 text-center">
+               <img src="images/code.jpg">
+               <p class="text-center">关注官方微信2</p>
+             </div>
+          </div>
+       </div>-->
+       
+       <!--<div class="row">
+          <div class="help clearfix">
+             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="media cg-footer-media">
+                    <div class="media-left">
+                      <a href="#">
+                        <img class="media-object"  alt="64x64" style="width: 50px; height: 50px;" src="images/footer4.jpg">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading">100%公平公正</h4>
+                      <p>参与过程公开透明，用户可随时查看</p>
+                    </div>
+                 </div>
+             </div>
+             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="media cg-footer-media">
+                    <div class="media-left">
+                      <a href="#">
+                        <img class="media-object"  alt="64x64" style="width: 50px; height: 50px;" src="images/footer5.jpg">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading">100%正品保证</h4>
+                      <p>精心挑选优质商家，100%品牌正品</p>
+                    </div>
+                 </div>
+             </div>
+             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                <div class="media cg-footer-media">
+                    <div class="media-left">
+                      <a href="#">
+                        <img class="media-object"  alt="64x64" style="width: 50px; height: 50px;" src="images/footer6.jpg">
+                      </a>
+                    </div>
+                    <div class="media-body">
+                      <h4 class="media-heading">全国免运费</h4>
+                      <p>全场商品全国包邮（港澳台地区除外）</p>
+                    </div>
+                 </div>
+             </div>
+          </div>
+       </div>-->
+
+      
+    </div>
+  <!--版权*****友情链接-->
+  <div id="footer_content"></div>
+  <!--帮助信息-->
+  <!--版权*****友情链接-->
+    <!--中间内容*************-->
+    <div id="foot_right"></div>
+    <!--右边，右边栏，返回顶部-->
+    <!--右边，右边栏，返回顶部-->
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.md5.js"></script>
+    <script src="js/data/connect_url.js"></script>
+    <script src="js/data/common.js"></script>
+      <script>
+          // 加载头部--------------公共头部
+          $("#head_top").load('head_top.html');
+          $("#head_select").load('head_select.html');
+          $("#head_menu_2").load('head_menu_2.html');
+          //加载底部
+          $("#footer_content").load('footer_copyright.html');
+          $("#foot_right").load('foot_right.html');
+
+      </script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/date-transite.js"></script><!--时间戳格式化-->
+    <script src="js/alert/sweetalert.min.js"></script><!--弹出框-->
+  <!--<script src="js/data/search.js"></script>--><!--搜索商品-->
+    <script src="js/data/notice.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+

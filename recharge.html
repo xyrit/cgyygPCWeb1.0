@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico">
+    <title>账户充值 - 橙果云购</title>
+    <meta name="keywords" content="1元，一元，一元云购，一元夺宝，1元云购，1元夺宝，一元购，1元购，橙果云购，橙果一元购，橙果1元购"/>
+    <meta name="description" content="橙果云购是一个新型的、专业的众筹式购物商城。只需1元，您就有机会获得一件商品。橙果云购将倾力打造一个公正公平公开的环境，让您的生活充满惊喜！"/>
+    
+    <link href="css/site.min.css" rel="stylesheet">
+    <link href="css/bootflat.min.css" rel="stylesheet">
+    <link href="css/yiyuan.css" rel="stylesheet">
+    <link href="css/goodscar/goodscar.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/alert/sweetalert.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <style>
+      .all-sort-list{width:200px; display:none}
+      .item-list .cat-right { position: absolute; right: 0;}
+      .all-sort-list .item.bo{width:200px;}
+      .menu .all-sort{top:0}
+      .all-sort-list .item-list{left:200px;}
+
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+  <!--加载头部三个分块文件 start-->
+  <div id="head_top"></div>
+  <div id="head_select"></div>
+  <div id="head_menu_2"></div>
+  <!--加载头部三个分块文件 end-->
+
+    <!--中间内容****-->
+    <div class="container">
+       <!--当前位置-->
+       <div class="row">
+         <ol class="breadcrumb cg-breadcrumb">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="personal-index.html">个人中心</a></li>
+            <li class="active">账户充值</li>
+          </ol>
+       </div>
+       <!--所有商品-->
+       <!--充值内容-->
+       <div id="nologin" class="margin-t-b-40 text-center"></div><!--未登录时-->
+       <div class="row margin-b-20" id="readyLogin1">
+          <div class="col-md-1 col-sm-1"><p class="nomargin" style="width:80px;">充值金额：</p></div>
+          <div class="col-md-9 col-sm-9">
+             <div class="row">
+                 <div class="col-md-2"><div class="rechargeSpan position-re">20元</div></div>
+                 <div class="col-md-2"><div class="rechargeSpan position-re">50元</div></div>
+                 <div class="col-md-2"><div class="rechargeSpan position-re">100元</div></div>
+                 <div class="col-md-2"><div class="rechargeSpan position-re">200元</div></div>
+                 <div class="col-md-2"><div class="rechargeSpan position-re">500元</div></div>
+                 <div class="col-md-2">
+                     <div class="rechargeSpan1 rechargeSpan2 position-re">
+                        <input type="text" class="form-control rechargeInput" id="otherMoney" placeholder="请输入其他金额"/>
+                     </div>
+                 </div>
+             </div>
+          </div>
+          
+       </div>
+       <div class="row pay-style margin-b-20" id="readyLogin2">
+
+          
+       </div>
+       <div class="row">
+          <div class="col-md-2 col-md-offset-1">
+             <button type="button" class="btn cg-btn-danger cg-btn-fixed-round" id="surePayforBtn">确认支付</button>
+          </div>
+       </div>
+       <div class="row">
+          <div class="col-md-12 col-sm-12 question">
+             <dl>
+                 <dt>支付遇到问题</dt>
+                 <dd>请联系<a href="tencent://Message/?Uin=3048007917&websiteName=www.cgyyg.com=&Menu=yes"  class="text-blue">客服QQ：</a> <span class="padding-l-r-5" style="padding-left: 0">3048007917</span>或拨打服务热线<span class="padding-l-r-5">400-006-7060</span>进行咨询。</dd>
+
+             </dl>
+             </dl>
+          </div>
+       </div>
+
+
+       
+    </div>
+  <!--帮助信息-->
+  <!--版权*****友情链接-->
+  <div id="footer_content"></div>
+  <!--版权*****友情链接-->
+    <!--中间内容*************-->
+
+    <!--右边，右边栏，返回顶部-->
+    <div id="foot_right"></div>
+    <!--右边，右边栏，返回顶部-->
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/jquery.json.min.js"></script>
+    <script src="js/data/connect_url.js"></script>
+    <script src="js/data/common.js"></script>
+    <script>
+        // 加载头部--------------公共头部
+        $("#head_top").load('head_top.html');
+        $("#head_select").load('head_select.html');
+        $("#head_menu_2").load('head_menu_2.html');
+        //加载底部
+        $("#footer_content").load('footer_copyright.html');
+        $("#foot_right").load('foot_right.html');
+
+    </script>
+    <script src="js/alert/sweetalert.min.js"></script><!--弹出框-->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/data/recharge.js"></script>
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>
+

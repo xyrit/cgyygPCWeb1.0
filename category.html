@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="icon" href="favicon.ico">
+      <title>商品分类 - 橙果云购</title>
+      <meta name="keywords" content="1元，一元，一元云购，一元夺宝，1元云购，1元夺宝，一元购，1元购，橙果云购，橙果一元购，橙果1元购"/>
+      <meta name="description" content="橙果云购是一个新型的、专业的众筹式购物商城。只需1元，您就有机会获得一件商品。橙果云购将倾力打造一个公正公平公开的环境，让您的生活充满惊喜！"/>
+    <link href="css/site.min.css" rel="stylesheet">
+    <link href="css/bootflat.min.css" rel="stylesheet">
+    <link href="css/yiyuan.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/alert/sweetalert.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+    <style>
+      .all-sort-list{width:200px; display:none}
+      .item-list .cat-right { position: absolute; right: 0;}
+      .all-sort-list .item.bo{width:200px;}
+      .menu .all-sort{top:0}
+      .all-sort-list .item-list{left:200px;}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+  <!--加载头部三个分块文件 start-->
+  <div id="head_top"></div>
+  <div id="head_select"></div>
+  <div id="head_menu_2"></div>
+  <!--加载头部三个分块文件 end-->
+
+    <!--中间内容****-->
+    <div class="container">
+       <!--当前位置-->
+       <div class="row">
+         <ol class="breadcrumb cg-breadcrumb">
+            <li><a href="index.html">首页</a></li>
+            <li>商品分类</li>
+            <li class="active" id="sub_bread"></li>
+          </ol>
+       </div>
+       <!--所有商品-->
+       <div class="row">
+           <div class="panel panel-danger cg-panel">
+              <div class="panel-heading">
+                 <h3>该类目下所有商品<small>（共<em id="total">108</em>件商品）</small></h3>
+              </div>
+              <div class="panel-body">
+                 <ul class="list-group cg-list-group clearfix" id="horizontalMenu">
+                       <div class="loading"></div>
+
+                 </ul>
+              </div>
+           </div>
+       </div>
+       <div class="row">
+          <div class="well cg-well clearfix">
+             <h3 class="pull-left">排序：</h3>
+             <p class="pull-left">
+               <a href="javascript:;" id="type3" class="active sort" data-type="3">剩余人次</a>
+               <a href="javascript:;" class="sort" id="type4" data-type="4">即将揭晓</a>
+               <a href="javascript:;" class="sort" data-type="1">
+                 <span>总需人次</span>
+                 <!--<span class="glyphicon glyphicon-arrow-up"></span>-->
+                 <span class="glyphicon glyphicon-arrow-up"></span>
+               </a>
+               
+             </p>
+          </div>
+       </div>
+       <!--商品列表-->
+       <div class="row" id="categoryGoodsList">
+              <div class="loading"></div>
+       
+       </div><!--商品结束-->
+
+       <!--分页-->
+       <nav class="text-center page">
+            <ul class="pagination clearfix" id="pagination">
+              <!--<li><a href="#"><span class="glyphicon glyphicon-chevron-left"></span>上一页</a></li>
+              <li><a href="#">1</a></li>
+              <li class="active"><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li class="disabled"><a href="#">...</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">下一页<span class="glyphicon glyphicon-chevron-right"></span></a></li>-->
+            </ul>
+            <!--<div class="count-box">
+              <div class="count-num">
+               共<em id="pageCount"></em>页
+              </div>
+              <div class="jump">
+                <span>去到</span>
+                <input type="text" class="form-control">
+                <span>页</span>
+                <button type="button" class="btn btn-default cg-btn-default">确定</button>
+             </div>
+            </div> -->
+       </nav>
+       <!--分页-->
+
+       <!--帮助信息-->
+       
+
+       
+    </div>
+  <!--版权*****友情链接-->
+  <div id="footer_content"></div>
+  <!--版权*****友情链接-->
+    <!--中间内容*************-->
+
+    <!--右边，右边栏，返回顶部-->
+    <div id="foot_right"></div>
+    <!--右边，右边栏，返回顶部-->
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script src="js/data/connect_url.js"></script>
+    <script src="js/data/common.js"></script><!--公共方法-->
+    <script>
+        // 加载头部--------------公共头部
+        $("#head_top").load('head_top.html');
+        $("#head_select").load('head_select.html');
+        $("#head_menu_2").load('head_menu_2.html');
+        //加载底部
+        $("#footer_content").load('footer_copyright.html');
+        $("#foot_right").load('foot_right.html');
+
+    </script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/alert/sweetalert.min.js"></script><!--弹出框-->
+
+    <script src="js/jquery.histroy.js"></script>
+    <script src="js/turnPage/js-extend.js"></script>
+    <script src="js/turnPage/jquery-ajax-pager.js"></script>
+
+    <!--<script src="js/data/search.js"></script>--><!--搜索商品-->
+    <script src="js/data/category.js"></script>
+
+    <script src="js/addToCarBtn.js"></script><!--点击加入购物车弹出+1-->
+    <script src="js/data/addToCar.js"></script><!--添加商品进购物车-->
+    <script src="js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
+

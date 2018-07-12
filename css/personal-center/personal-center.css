@@ -1,0 +1,146 @@
+@charset "utf-8";
+/* CSS Document */
+.per-head{ background-image:url(../../images/per-head.jpg); background-size:cover; height:127px; width:100%; background-position:center center; background-repeat:repeat-x;color:#fff; margin-bottom:20px;}
+.uesrPic img{ width:50px;max-height:50px;padding: 1px;border: 1px solid #808080;}
+.per-head .per-head-p{ margin-top:30px;}
+.per-head .per-headBasic .list-group>li{ float:left; margin-right:5px;}
+.per-head .per-headBasic .list-group>li a{ color:#00c69e}
+.per-head .per-headBasic .list-group>li a:hover{color: #48cfad;}
+.per-head .per-dot{ margin-left:20px; display:block;float:left;}
+.per-head .per-dot>a{ background-position:center center; background-repeat:no-repeat; height:50px; display:block; width:60px; text-align:center;color:#fff}
+.per-head .per-dot>a>span{ display:block; width:60px; height:50px; line-height:50px;color:#fff}
+.per-head .per-dot .dot-a1{ background-image:url(../../images/dot1.png)}
+.per-head .per-dot .dot-a2{ background-image:url(../../images/dot2.png)}
+.per-head .per-dot .dot-a3{ background-image:url(../../images/dot3.png)}
+.per-head .per-dot .dot-a1:hover{color:#ff3c00;text-decoration:none}
+.per-head .per-dot .dot-a2:hover{color:#0090cc; text-decoration:none}
+.per-head .per-dot .dot-a3:hover{color:#2eb000;text-decoration:none}
+/*左侧菜单*/
+.per-list-group .list-group-item{ border:solid 1px #ccc; border-radius:0; padding:0; text-align:center;width: 100%;}
+.per-list-group .list-group-item>a{ color:#333; display:block;padding: 10px 15px;}
+.per-list-group .list-group-item>a:hover{background-color:#ff4800;color:#fff}
+.per-list-group .list-group-item.active{ background-color:#ff4800;}
+.per-list-group .list-group-item.active a{color:#fff}
+.per-list-group .list-group-item.active:hover{border-color:#ff4800}
+/*右侧内容*********我的账户****/
+.per-money{ padding:15px 0; border:1px solid #ccc; height:130px;}
+.per-money-con{ border-right:1px solid #ccc; height:95px; text-align:center;}
+.per-money-con .num{ color:#ff2400; font-size:24px; font-weight:bold}
+/*tab 切换 商品列表*/
+.per-goods-box{ border:1px solid #ccc;margin-top:15px;}
+.per-goods-box .nav-tabs{border:1px solid #ccc;margin:-1px -1px 0 -1px;border-radius: 0;-webkit-border-radius: 0;-moz-border-radius: 0; background-color:#fff}
+.per-goods-box .nav-tabs li{ border:1px solid #ccc;border-left:0; border-bottom:0;border-top:0}
+.per-goods-box .nav-tabs .active{ border-top:2px solid #ff4800;border-left:0; border-bottom:0;margin-bottom: -1px; border-radius:0}
+.per-goods-box .nav-tabs .active a{ padding:10px 20px; }
+.per-goods-box .nav-tabs a{ padding:10px 20px;}
+
+
+
+
+/*资金明细按钮部分*/
+.per-time{  height:40px; line-height:32px; border:1px solid #ccc; margin-bottom:15px; margin-top:10px;}
+.per-time-left{ float:left; width:300px; padding-left:15px; line-height: 37px;}					  
+.per-time-left a{ color:#666; padding:2px 4px; margin:0 5px; font-size:12px;}					  
+.per-time-left a.active{ color:#ff4800; border:1px solid #ff4800;}	
+/*.per-time-left a:hover{color:#ff4800;}*/				  			  
+.per-time-select{/* float:right; width:390px;  line-height:22px; */ /*height:22px; */font-size:12px;  line-height: 36px; margin-right:12px;}			  
+/*.per-time-select-input{ width:108px; height:20px; border:1px solid #ccc; font-size:12px;}*/
+.per-time-select-sub{ width:60px; border:none; color:#fff; background:#ff2a00; margin-left:10px; border-radius:3px;}
+.per_time_tab-content{ margin:10px 10px;}
+
+
+/*超链接*/
+/*.linkIk{ color:#ff4800; font-size:14px; }
+.linkIk:hover{text-decoration:underline; color:#ff4800;}
+.linkIk-1{color:#ff4800;}
+.linkIk-1:hover{ color:#ff4800;}*/
+/*input*********/
+.cg_input{ border:1px solid #e2e2e2 !important; padding:3px 5px; line-height:25px; height:25px !important;margin: 0 5px;}
+.cg_input_2{ border:1px solid #AAB2BD !important; padding:3px 5px; line-height:34px; height:34px !important;}
+/*参与记录*/
+.number{ width:180px;}
+.pre-tip{ padding-bottom:10px;}
+
+/*我的积分*/
+.per-integral{ height:40px; line-height:32px; border:1px solid #ff4800; margin-bottom:15px; margin-top:10px;background: #ffe0d4;}
+.per-integral-left{ float:left;  line-height: 40px;}
+.per-integral-left ul li{float:left; padding-left:20px;}
+.per-integral-right{ float:right;}
+.per-integral-right{ margin: 1px 13px; }
+.intg{ text-align:center;}
+
+/*晒单*/
+.sunshare{ width:180px;}
+.sunshare .sunshare_nav{ font-size:14px;}
+
+/*晒单详情*/
+.sun-details{ margin:40px 35px;}
+
+/*红包*/
+.redbox_fl{ width:157px; height:169px; background:url(../../images/redbox_01.jpg) no-repeat;}
+.span-red{ position:absolute;  font-size: 50px;color: #ffd800;padding-left: 71px;padding-top: 57px;}
+.red-envelope{ padding-left:50px; line-height:30px;}
+
+/*地址*/
+.per-add_top{ width:951px; height:36px; line-height:32px; border:1px solid #ff4800; margin-bottom:15px; margin-top:10px; background:#ffe0d4;}
+.per-add_top span{ padding-left:10px;}
+
+.add_main_top{margin: 10px; border-bottom:1px dashed #ccc;padding-bottom: 10px;}
+.add_main_top p a span{ float:right; color:#b2b2b2;}
+.add_main_top p a span:hover{ color:#ff4800;}
+.add_main_foot{margin: 10px;}
+.triangle_down{position: absolute;bottom: -2px;right: -1px;}
+.per-add_mainbg{background:url(../../images/add_bg.gif) repeat-x; width:243px; border:1px solid #ccc; float:left; margin:10px 30px;
+min-height: 153px;
+}
+
+.add_main_top2{margin: 10px; border-bottom:1px dashed #ccc;padding-bottom: 10px;}
+.add_main_top2 p a span,.delete_btn{ color:#b2b2b2;}
+.add_main_top2 p a span:hover,.delete_btn:hover{ color:#ff4800;}
+.per-add_mainbg2{background:url(../../images/add_bg.gif) repeat-x -247px 0px; width:243px; border:1px solid #ccc; float:left;margin:10px 30px;min-height: 153px;}
+.triangle_down{position: absolute;bottom: -2px;right: -1px;}
+.add_main_foot2{margin: 10px;}
+
+.per-add_mainbg3{float:left; margin:10px 30px; border:2px dashed #ff4800; padding:36px 77px; }
+.per-add_mainbg3 a{color:#b2b2b2;}
+.per-add_mainbg3 a span{ font-size:25px; }
+.per-add_mainbg4{ width:450px;}
+
+/*个人设置*/
+.tab-per{ margin:40px 120px;}
+.per-per_top{height:36px; line-height:32px; border:1px solid #ff4800; margin-bottom:15px; margin-top:10px; background:#ffe0d4;}
+.per-per_top span{ padding-left:10px;}
+.form-inline{ margin:24px 0px;}
+.per-personal-sub{ margin-left:75px;}
+.Change-password{margin-left:100px;}
+.password-next{ margin-left:30px;}
+.per-nextstep-input{ margin-left:60px;}
+.upload-img{ border:2px dashed #ff4800; padding: 90px 10px;width: 350px;}
+.upload-img img{ width:100%;}
+.upload-left a{ color:#b2b2b2;}
+.upload-left a span{ font-size:30px;}
+.upload-input{ padding:10px 10px;}
+/*.upload-input p{ padding:0 76px;}*/
+.upload-input span{ padding-left:125px;}
+.right-img{ margin:10px 0px;}
+.right-img ul li{ float:left; padding-left:20px;}
+.upload-left2{ padding-left:50px;}
+.per-qq-input{ padding-left:30px;}
+#ossfile{ width:170px; /*height:170px;*/border: 1px solid #ccc;}
+#ossfile img{ width:100%}
+.password-next span{ font-size:16px; /*font-weight:600;*/}
+
+/*中奖记录*/
+.win { text-align:center;}
+/*第三方登录时，修改手机号时的去绑定的遮罩层*/
+.layer_bg{
+	filter: alpha(opacity=50);opacity: .5;width: 100%;height: 100%; position:absolute; background-color:#000;z-index: 99;
+}
+/*绑定第三方登录*/
+.bind_1{width:450px;}
+.bind_2{width:120px;}
+.bind_3{width:220px;}
+.bind_1,.bind_2,.bind_3{line-height: 50px}
+.bind_4{margin: 10px 0}
+.bind_ul li{ padding:0 10px; border-bottom:1px solid #e1e1e1; margin-bottom:10px;}
+.bind_collapse{ padding-bottom:20px; width:180px; margin:0 auto; text-align:center}

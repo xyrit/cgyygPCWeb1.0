@@ -1,0 +1,86 @@
+<!--搜索和logo-->
+<div class="container logo-search">
+   <div class="row">
+      <div class="col-lg-2 col-md-3 col-xs-4">
+		  <h1 class="logo_h1">
+			  <a href="/">橙果云购</a>
+		  </h1>
+      </div>
+      <!--<div class="col-lg-2 col-md-2 col-xs-3">
+         <a href="guide.html" target="_blank" style="margin-left: 20px"><img src="images/know.png"></a>
+      </div>-->
+      <div class="col-lg-4 col-md-4 col-xs-6 col-md-offset-1 col-lg-offset-4 margin-t-8">
+          <div class="form-group has-error position-re">
+            <!--<label class="control-label" for="inputError1">Input with error</label>-->
+            <input type="text" class="form-control cg-search-input" id="search_input">
+              <a href="#" class="position-ab search_a" id="btn_search" target="_blank"><button type="button" class="search-btn"></button></a>
+          </div>
+      </div>
+      <div class="col-lg-2 col-md-2 col-xs-3 margin-t-8">
+          <a href="payfor1.html" class="cg-car_a">
+            <div class="cg-car position-re clearfix">
+               <img src="images/car2.png" class="display-ib margin-btn margin-b-3">
+               <span class="display-ib text-white text-16">购物车</span>
+               <span class="badge pull-right cg-badge display-ib goods_num cart_num" id="goods_num"></span>
+            </div>
+          </a>
+      </div>
+   </div>
+
+</div>
+<script src="js/data/search.js"></script><!--搜索商品-->
+<script>
+//这是搜索默认值
+$(".cg-search-input").val("iPhone6s");
+var glo_searchName;
+$(".cg-search-input").focus(function(){
+	var searchName_1=$(this).val();
+	glo_searchName=searchName_1;
+	$(this).val('');
+});
+$(".cg-search-input").blur(function(){
+	//如果失去焦点后，输入框没有内容，则用推荐词
+	if($(this).val()==''){
+		var searchName_1=$(this).val(glo_searchName);
+	}
+});
+
+//头部的购物车数量----调用购物车数量接口
+var user_token = $.cookie('user_token');
+getCartNum();
+function getCartNum(){
+	$.ajax({  
+		type:'post',  
+		url:''+ajaxUrl+'/Home/Shopcart/listNum',  
+		data:{
+			user_token:user_token,
+			pageSize:10,
+			pageIndex:0,
+			//state:0, //资金明细类型 0消费记录,1充值记录
+			soso:0
+			},  
+		cache:false,  
+		dataType:'json',  
+		beforeSend:function(){
+
+		},
+		success:function(data){  
+		   if(data['code']==200){
+			   var goods_num=data['total']; 
+			   $(".goods_num").html(goods_num);
+			   
+			   
+		   }else if(data['code']==517){
+					//517为‘请登录后’再操作，防止出现此类问题，出现登录按钮
+				$("#loginBox").html('<a href="login.html">请登录</a>');
+				$("#regBox a").html("注册").attr({id:"reg_a",href:"login.html?regist=1"});
+				$(".goods_num").html('0');
+			}
+		   
+		   else{
+			   $(".goods_num").html('0');
+			   }
+		}
+  });
+}
+</script>
